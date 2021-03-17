@@ -1,0 +1,208 @@
+@charset "UTF-8";
+	.container-fluid{
+		background-color:#F6F5F5;
+		padding: 0;
+	}
+	
+	.Look_hr{
+		margin-top: 0;
+   		margin-bottom: 0;
+		background-color:#FFFFFF;
+	}
+	.Look_Top{
+		background-color:#FFFFFF;
+		text-align: center;
+		font-size: 14px;
+		height:200px;
+		min-height: 154px;
+	}
+	.Look_title{
+		font-size:45x;
+		font-weight: bold;
+		height: 51px;
+		min-height: 14px;
+		line-height: 150px;
+	}
+		.dropdown-toggle{
+		text-decoration:none;
+		color:black;
+	}
+	
+	.dropdown-toggle:hover{
+		text-decoration:none;
+		color:gray;
+	}
+	#category_dropdown {
+		position: absolute !important;
+		text-align: center !important;
+		float:unset !important;
+		left: 40%  !important;
+		top: 15% !important;
+		height: 320px;
+		width: 420px;
+		margin-top: 40px !important;
+		border-top: 1px solid  #EFEFEF;
+		border-bottom: 1px solid  #EFEFEF;
+		background-color:  #FFFFFF;
+		padding: 14px 32px 14px 32px;
+		bottom: -320px;
+	}
+	#drop-item1{
+		margin-top:10px;
+		padding-top:10px;
+	}
+	.dropdown-item{
+		padding: 5px 0 5px 20px;	
+		color: gray;
+		line-height: 23.8px;
+		cursor: pointer;
+		text-align:left;
+		font-weight:bold;
+		font-size:14px;
+	}
+	.dropdown-item:hover{
+		text-decoration:none;
+		color:black;
+	}
+	
+	.Look_title a{
+		font-size:30px;
+		color:gray;
+		vertical-align:super;
+		padding-left: 5px;
+	}
+	.Look_title a:hover{
+		color: black;
+	}
+	.Look_Midbar{	
+		border-top: 1px solid  #EFEFEF;
+		background-color: #FFFFFF;
+		height: 60.5px;
+		padding: 15px 14px 0 14px;
+		font-size: 14px;
+		line-height: 23.8px;
+	}
+	
+	.Look_Select{
+		font-size: 14px;
+		font-weight:bold;
+		line-height: 17.5px;
+		white-space: pre;
+		background-color: #FFFFFF;
+		color: #000000;
+		height: 31.5px;
+		width: 112px;
+		cursor:pointer;
+	}
+	
+	.Look_Label{
+		font-size: 14px;
+		font-weight:bold;
+		line-height: 17.5px;
+		text-align: right;
+		cursor:pointer;
+	}
+	
+	.Look_Content{
+		border-top: 4px solid  #EFEFEF;
+		font-size: 14px;	
+		line-height: 23.8px;
+		padding: 14px 0 14px 0;
+		text-align: left;
+	}
+	/********************************* [ 카 드 ] **********************************/
+	.card{
+		height: 370px;
+		width: 25%;
+		min-height: auto;
+		min-width: auto;
+		padding: 10px 14px 20px 14px;
+		margin:15px 0px 15px 0;
+		-webkit-transform: perspective(1px) translateZ(0);
+ 	 	transform: perspective(1px) translateZ(0);
+  		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  		-webkit-transition-duration: 0.3s;
+ 		transition-duration: 0.3s;
+  		-webkit-transition-property: transform;
+  		transition-property: transform;
+	}
+	.card:hover,.card:focus,.card:active {
+ 	 	-webkit-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+	.card-header{
+		height: 200px;
+		width: 230px;
+	}
+	.card-body{
+		border:1px solid;
+		height: 45%;
+		width: 230px;
+		border: 1px solid #8E8E90;
+		min-height: auto;
+		min-width: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	/***************** 카드 클래스에 마우스 올려 놓았을 때   *******************/
+	.card:hover{
+		cursor:pointer;
+	}
+	/***************** 추천 프로젝트, 인기 프로젝트 이미지 속성   *******************/
+	.card_img{
+		height: 200px;
+		width: 230px;
+		border: 1px solid  #2242;
+	}
+	
+	/***************** 프로젝트 제목 속성   *******************/
+	.project_title{
+		display:block;
+		font-size:16px;
+		margin-top:5px;
+		font-weight : bold;
+	}
+	
+	/***************** 프로젝트 만든이 닉네임 속성   *******************/
+	.project_nick{
+		display:block;
+		font-size:11px;
+		padding-left:10px;
+	}
+	/***************** 프로젝트 남은 날짜   *******************/
+	.project_date{
+		font-size:11px;
+		display:inline;
+		vertical-align: middle;
+		font-size:12px;
+		padding-left:10px;
+		padding-right: 5px;
+		font-weight : bold;
+	}
+	#project_img{
+		width: 10px;
+		height: 10px;
+	}
+	/***************** 프로젝트 남은 금액  *******************/
+	.project_cost{
+		font-size:12px;
+		display:inline;
+		vertical-align: middle;
+		text-align:right;
+		font-weight : bold;
+		padding: 0px;
+	}
+	.project_per{
+		font-size:8px;
+		display:inline;
+		vertical-align: middle;
+		text-align:right;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	/***************** hr태그 속성 (카드 안에 줄)   *******************/
+	.card_hr{
+		border:solid  1px ;
+		color:red;
+	}
+	

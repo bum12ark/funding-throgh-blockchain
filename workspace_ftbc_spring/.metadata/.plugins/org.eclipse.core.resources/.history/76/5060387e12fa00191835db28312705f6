@@ -1,0 +1,9 @@
+package blockchain.test;
+
+import java.io.UnsupportedEncodingException;
+
+public class AES256Test {
+	public static void main(String[] args) throws UnsupportedEncodingException {
+		AES256Util aes = new AES256Util("테스트테스트테스트테스트테스트");
+	}
+}

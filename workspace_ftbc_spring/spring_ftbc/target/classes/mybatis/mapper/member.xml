@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mapper.MemberMapper">
+	<select id="emailCheck" parameterType="mVO" resultType="String">
+		select nvl2((SELECT mem_email
+		  			 FROM mem
+		 			WHERE mem_email = #{mem_email}),'0','1') FROM dual
+	</select>
+	<!-- /////////////////////2019-10-14 정원형 중간합산 회원가입시 전화번호도 인서트 ////////////////////// -->
+	<insert id="join" parameterType="mVO">
+		INSERT INTO mem(mem_email,mem_name,mem_pw,mem_birth
+						,mem_nickname,mem_isdisclose)
+			   VALUES(#{mem_email},#{mem_name},#{mem_pw},#{mem_birth}
+			   		 ,#{mem_name},#{mem_isdisclose})
+	</insert>
+	<!-- /////////////////////2019-10-14 정원형 중간합산 회원가입시 전화번호도 인서트 ////////////////////// -->	
+	<select id="login" parameterType="mVO" statementType="CALLABLE">
+      {call proc_login(
+      #{mem_email, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
+         ,#{mem_pw, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
+         ,#{mem_name, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String}
+         ,#{mem_pfimg, mode=OUT, jdbcType=CLOB, javaType=java.lang.String}
+         ,#{mem_isauthority, mode=OUT, jdbcType=NUMERIC, javaType=java.lang.String}
+         ,#{mem_nickname, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String}
+         ,#{msg,mode=OUT,jdbcType=VARCHAR, javaType=java.lang.String}
+      )}
+   </select>
+	<select id="getMyProjects" parameterType="String" resultType="int">
+		select count(project_code) from project,mem where mem.mem_email=#{value}
+	</select>
+	<select id="getSupporterName" parameterType="String" resultType="String">
+		SELECT MEM_NAME FROM MEM
+		WHERE MEM_PUBLICKEY = #{mem_Publickey}
+	</select>
+	<!-- /////////////////////2019-10-15 정원형 중간합산 이후 비밀번호 찾기 ////////////////////// -->
+	<update id="forgotEmail" parameterType="map">
+		UPDATE mem
+				SET mem_pw=#{imsiPassword}
+				WHERE mem_email=#{email} and mem_birth=#{birth}
+	</update>
+	<select id="prepasswordConfirm" parameterType="mVO" resultType="String">
+		SELECT nvl2((select mem_pw from mem where mem_pw=#{mem_pw} and mem_email=#{mem_email}
+					),'있음','없음') from dual
+	</select>
+	<update id="editAccount" parameterType="mVO">
+		UPDATE mem set
+					mem_pw=#{mem_pw}
+			   where mem_email=#{mem_email}
+	</update>
+	<!-- /////////////////////2019-10-15 정원형 중간합산 이후 비밀번호 찾기 ////////////////////// -->
+	<update id="MemberUpdate" parameterType="map">
+      update mem set MEM_NAME = #{name_tbox},MEM_LOC = #{loc_tbox},MEM_ADDR=#{buyer_addr},MEM_PFIMG=#{edit_img_result}
+               ,MEM_HP = #{mem_hp}, MEM_ZIPCODE = #{zipCode},MEM_NICKNAME=#{mem_nickname}
+         where mem_email = #{mem_email}      
+   </update>
+     <select id="memberReplace" parameterType="mVO" resultType="mVO">
+      select mem_pfimg,mem_name from mem where mem_email = #{mem_email}
+   </select>
+   <insert id="messageSend" parameterType="map">
+	INSERT INTO message(MS_CODE,MS_TITLE,MS_recipient,MS_ISREAD
+				,MS_QUESTION,MS_DATE,MS_CONTENT,MEM_EMAIL,project_code)
+	   VALUES(#{message_code},#{MS_TITLE},#{mem_email},0,#{modal-types_select},
+	   		 sysdate,#{modal-contents},#{send_mem},#{PROJECT_CODE})
+
+   </insert>
+   <select id="messageCode" parameterType="map" statementType="CALLABLE">
+      {call message_code(
+                         #{PROJECT_CODE, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String}
+                          ,#{message_code, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String}
+                          )
+      }
+   </select>
+   <select id="messageRecipient" parameterType="map" resultType="String">
+   		select mem.mem_email from mem,project where mem.mem_email = project.mem_email and project.PROJECT_CODE = #{PROJECT_CODE}
+   
+   </select>
+   <!-- =======[[고명석 2019-10-17 추가]]======== -->
+   <select id="myMessage" parameterType="String" resultType="vo.MessageVO">
+select ms_code,ms_title,ms_recipient,ms_isread,ms_question,ms_date,ms_content,message.mem_email,project_code,m.mem_nickname as rec_nickname,s.mem_nickname as my_nickname
+           from message ,(select mem_nickname,mem_email from mem where mem_email in (select ms_recipient
+                                    from message
+                                    where ms_recipient in (select ms_recipient
+                                    from message
+                                    where mem_email in(#{value})
+                                      or ms_recipient in (#{value})))) m ,
+                                 (select mem_nickname,mem_email from mem where mem_email in (select mem_email
+                                    from message
+                                    where mem_email in (select mem_email
+                                    from message
+                                    where mem_email in(#{value})
+                                      or ms_recipient in (#{value})))) s
+           where message.mem_email in(select mem_email
+                                    from message
+                                    where mem_email in(#{value})
+                                      or ms_recipient in (#{value}))          
+             and message.ms_recipient = m.mem_email
+             and message.mem_email = s.mem_email
+             and ms_recipient in (select ms_recipient
+                                    from message
+                                    where mem_email in(#{value})
+                                      or ms_recipient in (#{value}))                                                     
+           order by ms_date desc
+   </select>
+   <select id="myPjoMessage" parameterType="map" resultType="vo.MessageVO">
+   	select ms_code,ms_title,ms_recipient,ms_isread,ms_question,ms_date,ms_content,message.mem_email,project_code,m.mem_nickname as rec_nickname,s.mem_nickname as my_nickname
+           from message ,(select mem_nickname,mem_email from mem where mem_email in (select ms_recipient
+                                    from message
+                                    where ms_recipient in (select ms_recipient
+                                    from message
+                                    where mem_email in(#{mem_email})
+                                      or ms_recipient in (#{mem_email})))) m ,
+                                 (select mem_nickname,mem_email from mem where mem_email in (select mem_email
+                                    from message
+                                    where mem_email in (select mem_email
+                                    from message
+                                    where mem_email in(#{mem_email})
+                                      or ms_recipient in (#{mem_email})))) s
+           where message.mem_email in(select mem_email
+                                    from message
+                                    where mem_email in(#{mem_email})
+                                      or ms_recipient in (#{mem_email}))          
+             and message.ms_recipient = m.mem_email
+             and message.mem_email = s.mem_email
+             and ms_recipient in (select ms_recipient
+                                    from message
+                                    where mem_email in(#{mem_email})
+                                      or ms_recipient in (#{mem_email}))  
+   		  and project_code in 
+			<foreach collection="projectCodes" item="item" index="index" open="(" separator="," close=")">
+				#{item}
+			</foreach>
+		order by ms_date desc	
+   </select>
+   <select id="getMsProcode" parameterType="String" resultType="String">
+   		select project_code
+   		from project
+   		where mem_email = #{value}
+   </select>
+   <update id="messageUpdate" parameterType="String">
+   		update message set ms_isread = '1'
+   		where ms_code = #{value}
+   </update>
+   <!-- 2019-10-23 고명석 추가 -->
+   	 <select id="getMemAge" parameterType="map" resultType="mVO">
+	 		select
+	 			TO_CHAR(SYSDATE,'YYYY')-substr(mem_birth,1,4) as mem_age,mem_publickey
+	 		  from mem
+	 		  where 1=1
+	 		  	and mem_publickey in
+	  		  <foreach collection="mem_publick" item="item" index="index"
+		 		open="(" separator="," close=")">
+		 		#{item}
+			 </foreach>
+	 </select>
+	 <select id="getMemname" parameterType="map" resultType="mVO">
+	 		select
+	 			substr(mem_name,1,1)||'**' as mem_name,mem_publickey,mem_pfimg
+	 		  from mem
+	 		  where 1=1
+	 		  	and mem_publickey in
+	  		  <foreach collection="mem_publick" item="item" index="index"
+		 		open="(" separator="," close=")">
+		 		#{item}
+			 </foreach>
+	 </select>
+</mapper>

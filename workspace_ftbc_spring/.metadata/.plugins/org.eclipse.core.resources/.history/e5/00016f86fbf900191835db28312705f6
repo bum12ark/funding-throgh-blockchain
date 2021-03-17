@@ -1,0 +1,236 @@
+@charset "UTF-8";
+	body{
+		background-color:#f6f5f5;
+	}
+	hr{
+		margin-top: 0;
+   		margin-bottom: 0;
+		background-color:#ffffff;
+	}
+	#FundedProject_top{
+		height: 250px;
+		width:110%;
+		background-color:#ffffff;
+		text-align:center;
+	}
+	
+	#FundedProject_ele{
+		text-align:center;
+	 	height: 150px;
+	 	left:55%;
+	    line-height: 200px;
+	    margin-right:120px;
+	}
+	
+	#Fpj_pfimg{
+		width: 120px;
+	}
+	
+	#FundedProject_ele h3{
+		text-align:center;
+		font-size: 18px;
+		font-weight:bold;
+		margin-top:-20px;
+	}
+	
+	#FundedProject_content{
+		background-color: #f6f5f5;
+	}
+	
+	/****************[ FPJ Content  ]**************/
+	#Fpj_content_top{
+		height: 75px;
+		padding: 14px 0 14px 0;
+	}
+	/*****************[버튼]********************/
+	.Fpj_btns{
+		cursor:pointer;
+		text-decoration:none;
+		font-size:14px;
+		line-height:40px;
+		vertical-align:middle;
+		color: #000000;
+		position: relative;
+		margin:10px;
+		border-radius:5px;
+		width:130px;
+	}
+	#Fpj_ing{
+		width:145px;
+	}
+	.Fpj_num{
+		background-color: #999999;
+		color: #FFFFFF;
+		font-size:12px;
+		line-height:12px;
+		margin-left: 10px;
+		height: 19px;
+		width: 24px;
+		padding: 4px 9px 4px 9px;
+		cursor: pointer;
+		display: inline;
+		border-radius: 5px;
+	}
+	
+	.Fpj_btns:hover{
+		background-color: #DDDDDD;
+		text-decoration: none;
+		width:130px;
+	}
+	
+	.Fpj_btns:focus {
+		background-color: #999999;
+		text-decoration: none;
+	}
+	/*****************[검색바]********************/
+	#Fpj_content_sbar{
+		line-height: 20px;
+		width: 350px;
+		height: 40px;
+		border-radius: 5px;
+		border: 2px solid gainsboro;
+		float:right;
+		margin:10px;
+		background-color: #FFFFFF;
+	}
+	
+	#Fpj_search{
+		border-right: none;
+		width: 92%;
+		height: 100%;
+		font-size: 14px;
+		color: gainsboro;
+		float: left;
+		display: inline;
+		outline: none;
+		border: none;
+		background-color: #FFFFFF;
+	}
+	#Fpj_search_btn{
+		display: inline;
+		width: 8%;
+		outline: none;
+		height: 100%;
+		background-image: url("../FTBC_Images/search.png");
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: 18px;
+		background-color:#FFFFFF;
+		border: none;
+		cursor: pointer;
+	}
+	
+	/*********************[후원 결과]*********************/
+	.Fpj_count{
+		color: #545454;
+		background-color:  #eeeded;
+		padding: 20px 24px 16px 24px;
+		height:60px;
+		min-height:16px;
+		border-radius:5px;
+		margin-left:10px;
+		margin-top:10px;
+	}
+	
+	.fa{
+		margin-right:10px;
+	}
+	
+	
+	/**************************[[^^고명석 2019-10-14 추가]]****************************/
+/********************************* [ 카 드 ] **********************************/
+	.card{
+		height: 370px;
+		width: 20%;
+		min-height: auto;
+		min-width: auto;
+		padding: 10px 14px 20px 14px;
+		margin:15px 65px 15px 0;
+		-webkit-transform: perspective(1px) translateZ(0);
+ 	 	transform: perspective(1px) translateZ(0);
+  		box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  		-webkit-transition-duration: 0.3s;
+ 		transition-duration: 0.3s;
+  		-webkit-transition-property: transform;
+  		transition-property: transform;
+	}
+	.card:hover,.card:focus,.card:active {
+ 	 	-webkit-transform: scale(1.05);
+		transform: scale(1.05);
+	}
+	.card-header{
+		height: 200px;
+		width: 230px;
+	}
+	.card-body{
+		border:1px solid;
+		height: 45%;
+		width: 230px;
+		border: 1px solid #8E8E90;
+		min-height: auto;
+		min-width: auto;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	/***************** 카드 클래스에 마우스 올려 놓았을 때   *******************/
+	.card:hover{
+		cursor:pointer;
+	}
+	/***************** 추천 프로젝트, 인기 프로젝트 이미지 속성   *******************/
+	.card_img{
+		height: 200px;
+		width: 230px;
+		border: 1px solid  #2242;
+	}
+	
+	/***************** 프로젝트 제목 속성   *******************/
+	.project_title{
+		display:block;
+		font-size:16px;
+		margin-top:5px;
+		font-weight : bold;
+	}
+	
+	/***************** 프로젝트 만든이 닉네임 속성   *******************/
+	.project_nick{
+		display:block;
+		font-size:11px;
+		padding-left:10px;
+	}
+	/***************** 프로젝트 남은 날짜   *******************/
+	.project_date{
+		font-size:11px;
+		display:inline;
+		vertical-align: middle;
+		font-size:12px;
+		padding-left:10px;
+		padding-right: 5px;
+		font-weight : bold;
+	}
+	#project_img{
+		width: 10px;
+		height: 10px;
+	}	
+	/***************** 프로젝트 남은 금액  *******************/
+	.project_cost{
+		font-size:12px;
+		display:inline;
+		vertical-align: middle;
+		text-align:right;
+		font-weight : bold;
+		padding: 0px;
+	}
+	.project_per{
+		font-size:8px;
+		display:inline;
+		vertical-align: middle;
+		text-align:right;
+		padding-right: 10px;
+		padding-left: 10px;
+	}
+	/***************** hr태그 속성 (카드 안에 줄)   *******************/
+	.card_hr{
+		border:solid  1px ;
+		color:red;
+	}
+	/**************************[[^^고명석 2019-10-14 추가]]****************************/

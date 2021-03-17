@@ -1,0 +1,77 @@
+@charset "UTF-8";
+	/***************** 프로젝트 스토리 박스  스타일 속성  *******************/
+	#st_story1{
+		border: 1px solid #c5c5c5;
+		border-radius:5px;
+		background-color: white!important;
+		width:100%;
+		height:auto;
+		padding-left:20px;
+		margin-bottom:20px;
+	}
+	/***************** 프로젝트 스토리 박스 안 이미지 태그 스타일 속성 *******************/
+	#st_story1 img{
+		width:15px;
+	}
+	/***************** 프로젝트 스토리 박스 안 row 클래스 스타일 속성 *******************/
+	#st_story1 .row{
+		margin-top: 10px;
+	}
+	/***************** 프로젝트 스토리 작성 박스 스타일 속성 *******************/
+	#st_story2{
+		border: 1px solid #c5c5c5;
+		border-radius:5px;
+		background-color: #f0f5ff!important;
+		width:100%;
+		height:600px;
+		text-align:center;
+		margin-bottom:20px;
+	}
+
+	/***************** 섬머노트 스타일 속성 *******************/
+	#editor{
+		width:95%;
+		display:inline-block;
+	}
+	.note-editable{
+		text-align:left;	aay0318
+	}
+	.note-toolbar{
+		text-align:left;	
+	}
+	/***************** 프로젝트 스토리 작성 박스 안 문자들 스타일 속성 *******************/
+	#story2_guide, #story2_title{
+		margin-left: 20px;
+		text-align: left;
+		float: left;
+	}
+	#story2_guide_a{
+		background-color:transparent!important;
+	}
+	#story2_title{
+		margin-bottom: -20px;
+		margin-top:10px;
+	}
+	
+	/***************** 취소하기 버튼 스타일 속성 *******************/
+	#story_cancel{
+		color:white;
+		border:none;
+		background-color: #e0e1e2 !important;
+		border-radius:5px;
+		vertical-algin:middle;
+		text-align:center;
+		width: 100px;
+		line-height:25px;
+	}
+	
+	/***************** 저장하기 버튼 스타일 속성 *******************/
+	#story_save{
+		color:white;
+		border:none;
+		background-color: #635c9f !important;
+		border-radius:5px;
+		vertical-algin:middle;
+		text-align:center;
+		width: 100px;
+		line-height:25px;

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<servers>
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/Tomcat v8.5 Server at ftbc-config" deployDir="wtpwebapps" hostname="localhost" id="Tomcat v8.5 Server at ftbc" name="Tomcat v8.5 Server at ftbc" runtime-id="Tomcat v8.5 Server at ftbc" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="90" stop-timeout="15" testEnvironment="true" timestamp="5">
+    <list key="modules" value0="spring_ftbc::org.eclipse.jst.jee.server:spring_ftbc::jst.web::2.5"/>
+  </server>
+</servers>

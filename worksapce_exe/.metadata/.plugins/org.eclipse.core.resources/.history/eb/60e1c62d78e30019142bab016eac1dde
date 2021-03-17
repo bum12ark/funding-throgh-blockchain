@@ -1,0 +1,109 @@
+package exe.client;
+
+import java.io.BufferedOutputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+import java.util.StringTokenizer;
+
+import exe.path.Path;
+import exe.util.Protocol;
+import exe.util.StringUtil;
+
+public class FileClientThread extends Thread {
+	InputStream in = null;
+	OutputStream out = null;
+	FileInputStream fin = null;
+	DataOutputStream dout = null;
+	DataInputStream din = null;
+	boolean isStop = false;
+	////
+	String msg = null;
+	StringTokenizer stz = null;
+	int protocol = 0;
+	////
+//	ObjectInputStream ois = null;
+	FileOutputStream fos = null;
+	BufferedOutputStream bos = null;
+	Socket fileSocket = null;
+	
+	public FileClientThread(Socket fileSocket) {
+		try {
+//			this.fileTransfer = fileTransfer;
+//			ois = new ObjectInputStream(in);
+			this.fileSocket = fileSocket;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	public void disconnect() {
+		try {
+			isStop = true;
+			if(in != null) in.close();
+			System.out.println("파일 클라이언트 스레드 종료!");
+		} catch (Exception e2) {
+			e2.printStackTrace();
+		}
+	}
+
+	@Override
+	public void run() {
+		while (!isStop) {
+			try {
+				if(fileSocket != null) {
+					out = fileSocket.getOutputStream();
+					dout = new DataOutputStream(out);
+					in = fileSocket.getInputStream();
+					din = new DataInputStream(in);
+					msg = din.readUTF();
+					if (msg != null && msg.length() > 0) {
+						System.out.println("메세지 : " + msg + "\n");
+						stz = new StringTokenizer(msg, "|");
+						protocol = Integer.parseInt(stz.nextToken());
+					}
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			switch (protocol) {
+			case Protocol.CHAIN_SYNC_DOWNLOAD: {
+				try {
+					String loginID = stz.nextToken();
+					System.out.println("CHAIN_SYNC_DOWNLOAD");
+					int data = din.readInt();
+					File file = new File(Path.CHAIN_DIRECTORY + loginID + "Chain.ftbc");
+					// * 파일
+//					out = new FileOutputStream(file);
+					out = new FileOutputStream(file);
+//					fos = new FileOutputStream(file);
+//					bos = new BufferedOutputStream(fos);
+					int datas = data;
+					byte[] buffer = new byte[1024];
+					int len;
+					for (; data > 0; data--) {
+						len = in.read(buffer);
+						out.write(buffer, 0, len);
+					}
+					out.flush();
+					isStop = true;
+					din.close();
+					out.close();
+					fileSocket.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+				}
+			}
+			break;
+			}
+
+		}
+	}
+}

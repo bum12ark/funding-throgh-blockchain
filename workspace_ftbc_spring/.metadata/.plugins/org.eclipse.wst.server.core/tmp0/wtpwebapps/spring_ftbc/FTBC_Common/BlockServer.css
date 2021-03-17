@@ -1,0 +1,21 @@
+@charset "UTF-8";
+	#server_content{
+		position:relative;
+		margin-top:20px;
+		top:25%;
+		left:20%;
+		display:inline-block;
+		text-align: center;
+	}
+	#stop_watch {
+		margin-top:20px;
+		text-align:center;
+		padding: 20px 20px 0 10px;
+	}
+	#stop_watch label,span{
+		font-size: 40px;
+		font-weight: bold;
+	}
+	#blockgif{
+		width: 110%;
+	}

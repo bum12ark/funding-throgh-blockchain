@@ -1,0 +1,21 @@
+1569298287727	Rename field 'jl_public'
+1569298296118	Rename field 'jl_private'
+1569298308831	Rename field 'jl_sync'
+1569298319795	Rename field 'jl_check'
+1569298330693	Rename field 'jl_wallet'
+1569301141352	Rename field 'jp'
+1569301184246	Rename field 'jp2'
+1569301214471	Rename field 'jp4'
+1569301227241	Rename field 'jp3'
+1569301237567	Rename field 'jp_publicLaFe'
+1569316967411	Delete element
+1569316971791	Delete element
+1569321544225	Move compilation unit
+1569328489274	Rename field 'ft'
+1569470023328	Rename method 'downloadFile'
+1569544294161	Rename package 'file.client'
+1569544307438	Rename package 'file.path'
+1569544315549	Rename package 'file.test'
+1569544322728	Rename package 'file.util'
+1569551935686	Rename field 'AUTOSYNC_UPLOAD'
+1569644300870	Rename method 'chainSyncDown'

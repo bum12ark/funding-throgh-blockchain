@@ -1,0 +1,210 @@
+@charset "UTF-8";
+/********************[상단   부분]*******************/	
+	#EditProfile_top{
+		height: 150px;
+		width:110%;
+		background-color:#dcd9ec;
+		display:table;
+	}
+	
+	#EditProfile_top h2{
+	 	font-size: 44px;
+		font-weight: 700;
+		line-height: 100px;
+		color:  #453e82;
+	}
+	#EditProfile_a{
+		text-align:center;
+		text-decoration: none;
+		margin-left:70px;
+	}
+	.EditProfile_a a{
+		display:table-cell;
+		vertical-align:middle;
+		text-align:center;
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 20px;
+		text-decoration: none;
+		color:  #878787;
+		cursor: pointer;
+		padding: 13px;
+		top:50%;
+		height:150px;
+		margin-top: -70px;
+	}
+	
+	.EditProfile_a a:hover,.EditProfile_a a:focus {
+	    color: #000000;
+	    text-decoration: none;
+	}	
+	
+/********************[내용   부분]*******************/	
+	/*   프로필 이미지 변경 div    */
+	.edit_d{
+		border-top: 1px solid  #EBE8E8;
+		border-bottom: 1px solid  #FFFFFF;
+		padding: 25px 0 25px 0;
+	}
+	
+	.edit_txtbox,#buyer_addr,#buyer_post1,#buyer_post2{
+		font-size: 16px;
+		background-color: #dcd9ec;
+		color:  #7D7D7D;
+		border-radius:5px;
+		border-top: 0px solid  #E7E5E5;
+		border-right: 0px solid  #E7E5E5;
+		border-bottom: 0px solid  #CFCACA;
+		border-left: 0px solid  #E7E5E5;
+		margin: 0 0 0 16px;
+		padding: 8px 5px 8px 5px;
+		min-height: 1px;
+		cursor: text;
+	}
+	
+	.labelbox{
+		height: 28px;
+		width: 100px;
+		padding: 5px 0 0 0;
+	}
+	.row p{
+		font-size: 13px;
+		line-height: 22.75px;
+		color:  #676363;
+		margin: 10px 0 0 20px;
+		word-spacing: 0.7px;
+	}
+	.labelbox {
+		text-align: right;
+	}
+	.labelbox label{
+		font-size: 13px;
+		font-weight: 500;
+		line-height: 28px;
+		text-decoration: none solid rgb(103, 99, 99);
+		color:  #676363;
+	}
+	/*******************[프로필 사진  변경]*******************/
+	#edit_img{
+		margin-top:15px;
+	}
+	#img_icon{
+		width: 60px;
+	}
+	
+	#edit_filebox{
+		font-size: 16px;
+		text-decoration: none solid rgb(103, 99, 99);
+		color:  #676363;
+		height: 27px;
+		width: 325px;
+	}
+	
+	#file_exp{
+		font-size: 14px;
+		line-height: 28px;
+		text-decoration: none solid rgb(103, 99, 99);
+		color:  #676363;
+	}
+	
+ 	/*******************[이름  변경]*******************/
+	#name_tbox{
+		height: 40px;
+		width: 120px;
+		margin-left: 0 !important;
+	}
+	/* =========[[^^ 고명석 2019-10-16 수정 ]] ================== */
+ 	/*******************[닉네임  변경]*******************/
+	#nick_name{
+		height: 40px;
+		width: 120px;
+		margin-left: 0 !important;
+	}
+	/*******************[주소  변경]*******************/
+	#loc_tbox{
+		height: 40px;
+		width: 200px;
+		margin-left: 0 !important;
+	}
+	/*******************[주소  변경]*******************/
+	#buyer_addr,#buyer_post1,#buyer_post2{
+		margin-left: 0 !important;
+	}
+	/* =========[[^^ 고명석 2019-10-16 수정 ]] ================== */
+	/*******************[소개  변경]*******************/
+	#info_tbox{
+		height: 93px;
+		width: 480px;
+	}
+	
+	/*******************[웹 페이지 변경]*******************/
+	#web_tbox{
+		width:270px;
+	}
+	/*******************[폰 번호  변경]*******************/
+	#phone_boxs input{
+		height: 40px;
+		width: 80px;
+		padding: 8px 1px 8px 1px;
+	}
+	/*******************[수정하기 버튼]*******************/
+	#edit_button{
+		color:  white;
+		font-size: 14px;
+		text-align: center;
+		vertical-align: middle;
+		background-color: #635c9f;
+		height: 48px;
+		width: 144px;
+		border-radius: 5px;
+		border:none;
+		outline:none;
+	}
+	
+	/***************** 프로필 카드 미리 보기*******************/
+	.card{
+		border: 3px solid  #EBE8E8;
+		margin-top:15px;
+		padding: 10px 20px 10px 20px;
+		margin-left:20px;
+	}
+	.card-header h5{
+		font-size: 12px;
+		font-weight: 600;
+		line-height: 21px;
+		color:  #635c9f;;
+		cursor: text;
+	}
+	
+	#img_preview{
+		width: 60px;
+		margin-right:15px;
+	}
+	.card-body p{
+		margin-left:-20px;
+		
+	}
+	#name_preview{
+		font-size: 15px;
+		line-height: 20px;
+		margin-left:-20px;
+		color:  #443333;
+		cursor: pointer
+	}
+	
+	#loc_icon{
+		width:13px;
+	}
+	
+	.card-footer{
+		text-align:center;
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 24px;
+		color:  #4B82F0;
+		height: 48px;
+		padding: 12px 0 12px 0;
+		cursor: pointer;
+
+	}
+	

@@ -1,0 +1,128 @@
+@charset "UTF-8";
+	.container-fluid{
+		background-color: #F5F5F5; 
+	}
+	#FundTop_bar{
+		background: linear-gradient(to right, #0f0051, #320032);
+		line-height:22.5px;
+		height:50px;
+		text-align:center;
+	}
+	
+	#Fund_title{
+		font-size:20px;
+		line-height:50px;
+		color:#FFFFFF;
+		font-weight: bold;
+	}
+	.Fund_Panel{
+		border-top: 1px solid #DCDCDC;
+		cursor: pointer;
+		background-color: #F5F5F5;
+		padding:0;
+		width: -webkit-fill-available;
+	}
+	.Fund_Panel_Reward{
+		background-color: #DCDCDC;
+	}
+	.Fund_Panel:hover .Fund_Header,
+	.Fund_Panel:hover .Fund_Body,
+	.Fund_Panel:hover .Fund_Footer {
+		background-color: #DCDCDC;
+	}
+	.Fund_Panel_magam{
+	 	background-color: rgba( 255, 255, 255, 0.5 );
+	}
+	
+	.Fund_Header{
+		height: 80px;
+		padding: 32px 30px 16px 30px;
+	}
+	
+	.Fund_Header input{
+		font-size:18px;
+		line-height:21px;
+		height: 38px;
+		width:160px;
+		border: 1px solid  #C8C3C3;
+		margin: 0 8px 0 0;
+		padding: 8px 11px 8px 11px;
+		min-height: 10px;
+		min-width: 10px;
+		cursor: text;
+	}
+	
+	.Fund_Header span{
+		font-size: 18px;
+		font-weight: bold;
+		line-height: 32px;
+	}
+	.Fund_Header a{
+		animation-duration: 1s;
+		animation-name: slidein;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+	}
+	.Fund_Header img{
+		width:35px;
+		margin-bottom:7px;
+	}
+	@keyframes slidein {
+	  from {
+	    margin-left: 2%;
+	    width: 300%; 
+	  }
+	
+	  to {
+	    margin-left: 1%;
+	    width: 100%;
+	  }
+	}
+	
+	.Fund_Body{
+		padding: 14px 20px 14px 20px;
+	}
+	.Fund_Body span{
+		font-size: 16px;
+		line-height: 32px;
+	}
+	.Fund_Body ul{
+		margin: 16px 0 16px 0;
+		padding: 0 0 0 40px;
+		font-size: 16px;
+		line-height: 32px;
+	}
+	.reward_notice{
+		font-size: 14px !important;
+		color:  #4B82F0;
+		ont-size: 16px;
+		line-height: 32px;
+	}
+	.Fund_Footer{
+		padding: 0 30px 16px 30px;
+		font-size: 14px;
+		line-height: 32px;
+	}
+	.Footer_num{
+		color:  #FA6462;
+	}
+	.optionSelect{
+	    width: auto;
+	    padding: 10px 15px;
+	    border: none;
+	    border-radius: 5px;
+	    color: black;
+	    background-color: #white; 
+	    margin-bottom:5px;
+	}
+	.optionSelect::-ms-expand{
+		display: none;
+	}
+	.optionJugwan{
+		width:400px;
+		font-size: 14px !important;
+   	 	border-radius: 5px; 
+   	 	padding:5px 5px;
+   	 	margin-bottom:5px;
+   	 	color: black; 
+	}

@@ -1,0 +1,155 @@
+package exe.client;
+
+import java.util.StringTokenizer;
+
+import javax.swing.JOptionPane;
+
+import exe.path.Path;
+import exe.util.Protocol;
+import exe.util.StringUtil;
+
+public class MsgClientThread extends Thread {
+	public Login login = null;
+	private FileView fileView = null;
+	boolean isStop = false;
+
+	public MsgClientThread(Login login) {
+		this.login = login;
+	}
+
+	@Override
+	public void run() {
+		System.out.println("MsgClientThread run메소드");
+		String msg = null;
+		while (!isStop) {
+			try {
+				msg = (String) login.ois.readObject();
+				StringTokenizer stz = null;
+				int protocol = 0;
+				if (msg != null) {
+					System.out.println("#MsgClientThread의 run메소드");
+					stz = new StringTokenizer(msg, Protocol.seperator);
+					protocol = Integer.parseInt(stz.nextToken());
+					System.out.println("프로토콜 : " + protocol);
+				}
+				switch (protocol) {
+				case Protocol.LOGIN: {
+					String loginResult = stz.nextToken();
+					String isWalletExist = stz.nextToken();
+					System.out.println("loginResult : " + loginResult);
+					if ("실패".equals(loginResult)) {
+						JOptionPane.showMessageDialog(login, "아이디나 비밀번호를 확인하세요.");
+					} else if ("중복로그인".equals(loginResult)) {
+						JOptionPane.showMessageDialog(login, "중복 로그인입니다. 실패");
+					} else {
+						login.setVisible(false);
+						login.jtf_id.setText("");
+						login.jpf_pw.setText("");
+						fileView = new FileView(login);
+						fileView.setTitle(loginResult + "님의 화면");
+						// 지갑 X
+						if ("공개키없음".equals(isWalletExist)) {
+							fileView.setWalletExist(false);
+							fileView.jtf_public.setText("지갑을 생성하세요.");
+							fileView.jtf_private.setText("지갑을 생성하세요.");
+							// 지갑이 존재 할 경우 publicKey를 보내줌
+						} else {
+							fileView.setWalletExist(true);
+							// 파일 뷰의 공개키 부분 텍스트 초기화
+							fileView.jtf_public.setText(isWalletExist);
+							fileView.jtf_private.setText("개인키를 입력하세요.");
+						}
+					}
+				}
+					break;
+				case Protocol.CHAIN_AUTHENTICATE_START: {
+					String loginID = stz.nextToken();
+					login.oos.writeObject(Protocol.CHAIN_AUTHENTICATE_START + Protocol.seperator + loginID);
+				}
+					break;
+				case Protocol.BASE64_DECODE_EXCEPTION: {
+					String loginID = stz.nextToken();
+					int result = JOptionPane.showConfirmDialog(fileView, "클라이언트의 체인 파일이 손상되었습니다.\n 체인을 재 다운로드 받으시겠습니까?",
+							"Confirm", JOptionPane.YES_NO_OPTION);
+					if (result == JOptionPane.YES_OPTION) {
+						// 서버의 체인 다운로드 진행 - 끝
+						fileView.fileTransfer.chainDown(loginID);
+						JOptionPane.showMessageDialog(fileView, "파일 다운이 완료 되었습니다.");
+					}
+				}
+					break;
+				case Protocol.NOT_HASH_VALID: {
+					String loginID = stz.nextToken();
+					int result = JOptionPane.showConfirmDialog(fileView,
+							"클라이언트의 체인 해쉬값이 손상되었습니다.\n 체인을 재 다운로드 받으시겠습니까?", "Confirm", JOptionPane.YES_NO_OPTION);
+					if (result == JOptionPane.YES_OPTION) {
+						// 서버의 체인 다운로드 진행 - 끝
+						fileView.fileTransfer.chainDown(loginID);
+						JOptionPane.showMessageDialog(fileView, "파일 다운이 완료 되었습니다.");
+					}
+				}
+					break;
+				case Protocol.ALREADY_SYNC: {
+					JOptionPane.showMessageDialog(null, "이미 최신화된 체인입니다.", "Already", JOptionPane.INFORMATION_MESSAGE);
+				}
+					break;
+				case Protocol.ADD_BLOCK: {
+					String loginID = stz.nextToken();
+					int result = JOptionPane.showConfirmDialog(null, "블록이 정상적으로 추가되었습니다.\n 해당 체인을 다운로드 받으시겠습니까?",
+							"Confirm", JOptionPane.YES_NO_OPTION);
+					if (result == JOptionPane.YES_OPTION) {
+						fileView.fileTransfer.chainDown(loginID);
+					} else {
+						JOptionPane.showMessageDialog(null, "파일 다운로드에 실패했습니다.");
+					}
+				}
+					break;
+				case Protocol.DAMAGED_PRIVATE_KEY: {
+					JOptionPane.showMessageDialog(fileView, "개인키가 손상되었습니다.");
+				}
+					break;
+				case Protocol.VALIDATED_KEYS: {
+					String privateBase64 = stz.nextToken();
+					JOptionPane.showMessageDialog(fileView, "개인키가 성공적으로 입력되었습니다.");
+					fileView.jtf_private.setText(privateBase64);
+				}
+					break;
+				case Protocol.UNVERIFIED_KEY: {
+					JOptionPane.showMessageDialog(fileView, "공개키와 개인키의 쌍이 맞지않습니다.");
+				}
+					break;
+				case Protocol.SEND_NEW_KEYS: {
+					String publicBase64 = stz.nextToken();
+					String privateBase64 = stz.nextToken();
+					// 저장
+					StringUtil stringUtil = new StringUtil();
+					stringUtil.mkDir(Path.KEY_DIRECTORY);
+					stringUtil.saveTxt(publicBase64, Path.KEY_DIRECTORY + login.loginID + ".puk");
+					stringUtil.saveTxt(privateBase64, Path.KEY_DIRECTORY + login.loginID + ".prk");
+					JOptionPane.showMessageDialog(fileView, "지갑이 생성됬습니다.");
+					fileView.jtf_public.setText(publicBase64);
+					fileView.jtf_private.setText(privateBase64);
+					fileView.setWalletExist(true);
+				}
+					break;
+				case Protocol.AUTOSYNC_UPLOAD_START: {
+					fileView.fileTransfer.autoSyncChainUpload(login.loginID, this);
+				}
+					break;
+				// 자동동기화버튼 - 마지막 파일을 업로드할 경우
+				case Protocol.AUTOSYNC_UPLOAD_START_LAST: {
+//					fileView.fileTransfer.autoSyncChainUploadLast(login.loginID, this);
+				}
+					break;
+				case Protocol.AUTOSYNC_CHAIN_DOWNLOAD: {
+					fileView.fileTransfer.chainDown(login.loginID);
+				}
+					break;
+				}
+			} catch (Exception e) {
+//				e.printStackTrace();
+			}
+		}
+	}
+
+}

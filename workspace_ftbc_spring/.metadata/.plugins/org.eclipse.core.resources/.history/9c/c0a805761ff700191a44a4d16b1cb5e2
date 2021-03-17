@@ -1,0 +1,51 @@
+package blockchain.test;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import blockchain.util.StringUtil;
+
+public class Test2 {
+
+	public static void main(String[] args) {
+		String strs[] =
+			{
+					"rhaudtjr!",
+					"rhkrehgns!",
+					"rlaalswl!",
+					"rlatltjd!",
+					"rladydgus!",
+					"rlawjddms!",
+					"rlagusxo!",
+					"rlagmldnjs!",
+					"qkrtkdqja!",
+					"tjtnrms!",
+					"thswnsgh!",
+					"dbtmdrl!",
+					"dbwhdska!",
+					"dlrjsdn!",
+					"dlruddo!",
+					"dlrhkdgus!",
+					"dltkdaks!",
+					"dlgksk!",
+					"wjdalsgml!",
+					"wjddnjsgud!",
+					"wjdwogus!",
+					"wjdwldn!",
+					"wjdgmldus!",
+					"whdndrl!",
+					"chlwhdgus!",
+					"gusxogh!",
+					"ghkdgusgud!"
+			};
+		List<String> shaList = new ArrayList<>();
+		for(String str : strs) {
+			String shaStr = StringUtil.applySha256(str);
+			shaList.add(shaStr);
+		}
+		for(String str : shaList) {
+			System.out.println(str);
+		}
+		System.out.println("고명석 : "+StringUtil.applySha256("고명석!"));
+	}
+}

@@ -1,0 +1,136 @@
+package exe.client;
+
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.net.Socket;
+
+import exe.path.Path;
+import exe.util.Protocol;
+
+public class FileTransfer {
+	FileView fileView = null;
+	FileClientThread fileClientThread = null;
+	Socket fileSocket = null;
+	OutputStream out = null;
+	DataOutputStream dout = null;
+	FileInputStream fin = null;
+	//
+	ObjectInputStream ois = null;
+	ObjectOutputStream oos = null;
+	//
+	public FileTransfer(FileView fileView) {
+		this.fileView = fileView;
+		try {
+			fileSocket = new Socket(Path.SERVER_IP, Path.FILE_SERVER_PORT);
+			out = fileSocket.getOutputStream();
+#			dout = new DataOutputStream(out);
+			oos = new ObjectOutputStream(out);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	// 파일 업로드
+	public void autoSyncChainUpload(String loginID, MsgClientThread mct) {
+		try {
+//			uploadInitialization();
+//			dout.writeUTF(Protocol.AUTOSYNC_CHAIN_UPLOAD
+//						+Protocol.seperator+loginID);
+			oos.writeObject(Protocol.AUTOSYNC_CHAIN_UPLOAD
+						+Protocol.seperator+loginID);
+			fin = new FileInputStream(new File(Path.CHAIN_DIRECTORY+loginID+"Chain.ftbc"));
+			byte[] buffer = new byte[1024];
+			int len = 0;
+			int data = 0;
+			while((len = fin.read(buffer)) > 0) {
+				data++;
+			}
+			fin.close();
+			fin = new FileInputStream(Path.CHAIN_DIRECTORY+loginID+"Chain.ftbc");
+			dout.writeInt(data);
+			len = 0;
+			for(; data>0;data--) {
+				len = fin.read(buffer);
+				out.write(buffer, 0, len);
+			}
+			fin.close();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+//				disconnectUpload();
+		}
+	}
+	// 체인 동기화 버튼 - 체인 업로드
+	public void chainSyncUpload(String loginID) {
+		try {
+//			uploadInitialization();
+//			dout.writeUTF(Protocol.CHAIN_SYNC_UPLOAD
+//						+Protocol.seperator+loginID);
+			oos.writeObject(Protocol.CHAIN_SYNC_UPLOAD
+					+Protocol.seperator+loginID);
+			dout = new DataOutputStream(out);
+			
+			fin = new FileInputStream(new File(Path.CHAIN_DIRECTORY+loginID+"Chain.ftbc"));
+			byte[] buffer = new byte[1024];
+			int len = 0;
+			int data = 0;
+			while((len = fin.read(buffer)) > 0) {
+				data++;
+			}
+			fin.close();
+			fin = new FileInputStream(Path.CHAIN_DIRECTORY+loginID+"Chain.ftbc");
+			dout.writeInt(data);
+			
+			len = 0;
+			for(; data>0;data--) {
+				len = fin.read(buffer);
+				//# 변경
+				out.write(buffer, 0, len);
+//				dout.write(buffer, 0, len);
+			}
+			//
+			fin.close();
+//			dout.flush();
+//			dout.close();
+			//
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+//			disconnectUpload();
+		}
+	}
+	// 파일 다운로드
+	public void chainDown(String loginID) {
+		try {
+//			downInitialization();
+//			dout.writeUTF(Protocol.CHAIN_SYNC_DOWNLOAD
+//						+Protocol.seperator+loginID);
+			oos.writeObject(Protocol.CHAIN_SYNC_DOWNLOAD
+					+Protocol.seperator+loginID);
+			///# 수정 필요
+			fileClientThread = new FileClientThread(this);
+			fileClientThread.start();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void disconnect() {
+		try {
+//			dout.writeUTF(Protocol.DISCONNECT_FILE_SOCKET
+//					+Protocol.seperator+"disconnect");
+			oos.writeObject(Protocol.DISCONNECT_FILE_SOCKET
+					+Protocol.seperator+"disconnect");
+//			if(dout != null) dout.close();
+//			if(out != null) out.close();
+//			if(fin != null) fin.close();
+//			if(fileSocket != null) fileSocket.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,84 @@
+package com.funding;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.project.ProjectLogic;
+
+import vo.GiftVO;
+import vo.ProjectVO;
+
+@Controller
+@RequestMapping("/Funding/*")
+public class FundingController {
+	private static final Logger logger = LoggerFactory.getLogger(FundingController.class);
+
+	@Autowired
+	FundingLogic fundingLogic = null;
+
+	@GetMapping(value = "fundDetail")
+	public String getfundproject(@RequestParam String projectCode, Model mod, String mem_email) {
+		// 프로젝트 상세보기
+		logger.info("Controller fundDetail 호출");
+		ProjectVO FundingDetail = fundingLogic.getFundDetail(projectCode, mem_email);
+		List<Object> FundingGiftDetail = fundingLogic.getFundGiftDetail(projectCode);
+		List<GiftVO> sortationSelect = fundingLogic.sortationSelect(FundingGiftDetail);
+		List<String> aList = (List<String>) FundingGiftDetail.get(0);
+		List<GiftVO> bList = (List<GiftVO>) FundingGiftDetail.get(1);
+		mod.addAttribute("sortationSelect", sortationSelect); // sList
+		mod.addAttribute("FundingDetail", FundingDetail);
+		mod.addAttribute("FundingGiftDetail", FundingGiftDetail); // gop_list
+		return "forward:/FTBC_FundView/Fund_Project.jsp";
+	}
+
+	@PostMapping(value = "payFund")
+	public String getPayFund(@RequestParam Map<String, Object> pMap, Model mod) {
+		logger.info("시발 pMap : " + pMap);
+		ProjectVO payFund = fundingLogic.getPayFund(pMap.get("gift_code").toString(), pMap.get("pjo_code").toString());
+		Map<String, Object> selectMap = new HashMap<>();
+		Map<String, Object> jugwanMap = new HashMap<>();
+		List<Map<String, Object>> selectList = new ArrayList<>();
+		List<Map<String, Object>> jugwanList = new ArrayList<>();
+		for (int i = 0; i < pMap.size(); i++) {// 객관식 옵션 담는것.
+			if (pMap.keySet().contains("selectedOption" + i)) {
+				selectMap.put("selectedOption", pMap.get("selectedOption" + i).toString());
+				selectList.add(selectMap);
+			} else {
+				break;
+			}
+		}
+		for (int i = 1; i < pMap.size(); i++) {
+			for (int j = 0; j < pMap.size(); j++) {
+				if (pMap.keySet().contains("optionJugwan" + i + j)) {
+					if (pMap.get("optionJugwan" + i + j).toString() != "") {
+						jugwanMap = new HashMap<>();
+						jugwanMap.put("optionJugwan", pMap.get("optionJugwan" + i + j).toString());
+						jugwanList.add(jugwanMap);
+					}
+				}
+			}
+		}
+		// 주관 리스트
+		mod.addAttribute("jugwanList", jugwanList);
+		// 객관식 옵션
+		mod.addAttribute("selectList", selectList);
+		// 페이 펀드 페이지에 있는 것들
+		mod.addAttribute("payFund", payFund);
+		// 금액
+		mod.addAttribute("donation", pMap.get("donation"));
+		return "forward:/FTBC_FundView/Pay_Project.jsp";
+	}
+
+}

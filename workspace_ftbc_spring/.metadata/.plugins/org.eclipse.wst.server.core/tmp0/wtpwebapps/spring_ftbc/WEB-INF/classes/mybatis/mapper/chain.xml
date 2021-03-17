@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mybatis.mapper.MemberMapper">
+
+	<!-- #DB- 프로젝트 이름으로 프로젝트 코드, 공개키 가져오기 -->
+	<select id="getProjectInfo" parameterType="java.lang.String" resultType="map">
+		SELECT pj.project_code as project_code, pj_publickey as pj_publickey
+		  FROM project pj, pjoutline pjo
+		 WHERE pj.project_code = pjo.project_code
+		   AND pjo.pjo_longtitle = #{value}
+	</select>
+	<!-- ^^ 중간 합본 이후 수정 -->
+	<select id="getCreatorInfo" parameterType="list" resultType="map">
+		SELECT pjo_longtitle, pj.pj_publickey, mem.mem_name as creator_name
+     		  FROM project pj, pjoutline pjo, mem
+            WHERE pj.project_code = pjo.project_code
+              AND mem.mem_email = pj.mem_email
+              AND pj.pj_publickey IN
+              <foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+               '${item}'
+              </foreach>
+	</select>
+	
+	<select id="getDonatorInfo" parameterType="list" resultType="map">
+		SELECT mem_name as donator_name, mem_publickey
+		  FROM mem
+		 WHERE mem_publickey IN
+		 <foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+		 	'${item}'
+		 </foreach>
+	</select>
+	<select id="isCreatorAuthorized" parameterType="map" resultType="java.lang.String">
+		SELECT NVL(
+					(SELECT mem.mem_email
+					  FROM mem, project
+					 WHERE mem.mem_email = project.mem_email
+					   AND project.pj_publickey = #{id}
+					   AND mem.mem_pw = #{password})
+					   , '비밀번호가 일치하지 않습니다.')  as isAuthorized FROM dual
+	</select>
+	<select id="isDonatorAuthorized" parameterType="map" resultType="java.lang.String">
+		SELECT NVL(
+			(SELECT mem_email
+			   FROM mem
+			  WHERE mem_publickey = #{id}
+			    AND mem_pw = #{password})
+			, '비밀번호가 일치하지 않습니다.') as isAutorized FROM dual
+	</select>
+	<select id="getDetailChainInfo" parameterType="vo.ChainVO" statementType="CALLABLE">
+		{call proc_getDetailChainInfo(
+			#{pj_publicKey, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String},
+			#{mem_publicKey, mode=IN, jdbcType=VARCHAR, javaType=java.lang.String},
+			#{pjo_longtitle, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String},
+			#{creator_name, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String},
+			#{project_code, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String},
+			#{donator_name, mode=OUT, jdbcType=VARCHAR, javaType=java.lang.String}
+		)}
+	</select>
+	<!-- ^^ 중간 합본 이후 수정 -->
+	<select id="getMemPubKey" parameterType="java.lang.String" resultType="java.lang.String">
+		SELECT NVL( (SELECT mem_publickey FROM mem WHERE mem_email = #{value}), '해당 사용자의 공개키가 존재하지 않습니다. 먼저 공개키를 발급해주세요.' )
+		  FROM dual
+	</select>
+</mapper>

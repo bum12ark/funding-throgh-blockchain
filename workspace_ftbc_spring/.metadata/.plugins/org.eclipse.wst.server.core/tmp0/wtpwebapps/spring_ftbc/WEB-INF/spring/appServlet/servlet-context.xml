@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+	<tx:annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/js/**" location="/js/" />
+	<resources location="/FTBC_Images/" mapping="FTBC_Images/**"/>
+	<resources location="/FTBC_Common/" mapping="/FTBC_Common/**"/>
+	<resources location="/FTBC_BlockChainView/" mapping="/FTBC_BlockChainView/**"/>
+	<resources location="/FTBC_CreateView/" mapping="FTBC_CreateView/**"/>
+	<resources location="/FTBC_DetailView/" mapping="FTBC_DetailView/**"/>
+	<resources location="/FTBC_FundView/" mapping="FTBC_FundView/**"/>
+	<resources location="/FTBC_LookView/" mapping="/FTBC_LookView/**"/>
+	<resources location="/FTBC_MainView/" mapping="/FTBC_MainView/**"/>
+	<resources location="/FTBC_myView/" mapping="/FTBC_myView/**"/>
+	<resources location="/FTBC_WalletView/" mapping="/FTBC_WalletView/**"/>
+	
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+		<beans:property name="contentType" value="text/html charset=UTF-8"/>
+	</beans:bean>
+	
+	<context:component-scan base-package="com.sts.ftbc" />
+	<context:component-scan base-package="com.main" />
+	<context:component-scan base-package="com.chain"/>
+	<context:component-scan base-package="com.community" />
+	<context:component-scan base-package="com.funding" />
+	<context:component-scan base-package="com.member" />
+	<context:component-scan base-package="com.project" />
+	<context:component-scan base-package="com.sponsor" />
+	<context:component-scan base-package="vo" />
+	
+	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<beans:property name="maxUploadSize" value="10485760"/>
+	</beans:bean>
+	
+	
+</beans:beans>

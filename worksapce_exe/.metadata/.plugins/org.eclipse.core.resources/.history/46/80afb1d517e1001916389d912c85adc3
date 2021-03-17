@@ -1,0 +1,94 @@
+package exe.client;
+
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.util.StringTokenizer;
+
+import exe.path.Path;
+import exe.util.Protocol;
+import exe.util.StringUtil;
+
+
+
+public class FileClientThread extends Thread {
+	FileView ft = null;
+	StringUtil stringUtil = null;
+	InputStream in = null;
+	FileOutputStream out = null;
+	FileInputStream fin = null;
+	DataOutputStream dout = null;
+	DataInputStream din = null;
+	public FileClientThread(StringUtil stringUtil) {
+		this.stringUtil = stringUtil;
+	}
+
+	@Override
+	public void run() {
+		String msg = null;
+		boolean isStop = false;
+		StringTokenizer stz = null;
+		int protocol = 0;
+		try {
+			in = stringUtil.fileSocket.getInputStream();
+			din = new DataInputStream(in);
+			System.out.println("din : "+din);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		while (!isStop) {
+			try {
+				msg = din.readUTF();
+				if (msg != null && msg.length() > 0) {
+					System.out.println("메세지 : " + msg + "\n");
+					stz = new StringTokenizer(msg, "|");
+					protocol = Integer.parseInt(stz.nextToken());
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			switch (protocol) {
+			case Protocol.CHAIN_SYNC_DOWNLOAD: {
+				try {
+					int data = din.readInt();
+					String fileName = din.readUTF();
+					File file = new File(Path.CHAIN_DIRECTORY+fileName);
+					// * 파일
+					out = new FileOutputStream(file);
+					
+					int datas = data;
+					byte[] buffer = new byte[1024];
+					int len;
+					
+					for (; data > 0; data--) {
+						len = in.read(buffer);
+						out.write(buffer, 0, len);
+					}
+					out.flush();
+					out.close();
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					try {
+						if(isStop == false) {
+							isStop = true; 
+							System.out.println("FILE_DOWNLOAD : 파일 클라이언트 스레드 종료");
+						}
+						if(!stringUtil.fileSocket.isClosed()) {
+							stringUtil.fileSocket.close();
+							System.out.println("FILE_DOWNLOAD : 파일 소켓 close");
+						}
+					} catch (Exception e2) {
+						e2.printStackTrace();
+					}
+				}
+			}
+				break;
+			}
+
+		}
+	}
+}

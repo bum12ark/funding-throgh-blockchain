@@ -1,0 +1,532 @@
+@charset "UTF-8";
+	#pjo_outline{
+		border:none;
+		width:100%;
+		border-radius:5px;
+		border-top-left-radius: 3px;
+   		border-top-right-radius: 5px;
+	}
+	#pjo_outline .col-sm-5{
+	margin: 1px;
+	padding: 1px;
+	float: right;
+	}
+	
+	#pjo_outline table{
+		border:1px solid#c5c5c5;
+		width:100%;
+	    border-top-left-radius: 3px;
+   		border-top-right-radius: 5px;
+	}
+	#pjo_outline table td{
+		border:1px solid#c5c5c5;
+		height: auto;
+	}
+	#pjo_outline a {
+		text-decoration:none ; 
+		color:#000000;
+		cursor : default;
+	}
+	#pjo_outline .button{
+		border: none;
+		width: 100%;
+		text-align: center;
+		display: inline-block;
+		text-decoration: none;
+		font-size: 13px;
+		border-radius:5px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	#pjo_outline .button_cancle{
+		background-color: #e0e1e2; 
+		color: black;
+	}
+	#pjo_outline .button_save{
+		background-color: #635c9f;
+		color: white;
+	}
+	#pjo_outline .button_next{
+		background-color: #1859FB;
+		color: white;
+		float: right;
+		width : 60px;
+		margin-right: 60px;
+	}
+	.summary_text{
+	  	line-height: 1.8;
+	  	font-size : 14px;
+	}
+	.filebox label {
+	    display: inline-block;
+	    padding: .5em .75em;
+	    color: #999;
+	    font-size: inherit;
+	    line-height: normal;
+	    vertical-align: middle;
+	    background-color: #fdfdfd;
+	    cursor: pointer;
+	    border: 1px solid #ebebeb;
+	    border-bottom-color: #e2e2e2;
+	    border-radius: .25em;
+	    width:100%;
+	    max-width:100%;
+	}
+	.filebox input[type="file"] {  /* 파일 필드 숨기기 */
+	    position: absolute;
+	    width: 1px;
+	    height: 1px;
+	    padding: 0;
+	    margin: -1px;
+	    overflow: hidden;
+	    clip:rect(0,0,0,0);
+	    border: 0;
+	}
+	/***************** 프로젝트 제목 박스  스타일 속성  *******************/
+	#pjo_title{
+		border:none;
+		background-color: white!important;
+		width:100%;
+		height:80px;
+		padding-left:20px;
+	}
+		/***************** 프로젝트 제목 박스 안 이미지 태그 스타일 속성 *******************/
+	#pjo_title img{
+		width:15px;
+	}
+		/***************** 프로젝트 제목 작성안 박스 스타일 속성 ***********************/
+	#pjo_title_edit{
+		border:none;
+		background-color: #f0f5ff;
+		width:100%;
+		height:600px;
+		padding-left:20px;
+	}
+
+	#pjo_title_img{
+		border:1px;
+		background-color: gray;
+		margin-left:40px;
+		padding-top:10px;
+		background-color: #e9eef7;
+	}	
+	#pjo_title_img img{
+		width : 80%;
+		margin-bottom:20px;
+	}
+	#pjo_title_edit2{
+		padding-left:20px;
+		margin-bottom:10px;
+	}
+	#pjo_title_edit3{
+		padding-left:20px;	
+	}
+	#pjo_title_edit3 input[type=text], select {
+		width: 80%;
+		height:30px;
+		padding: 12px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccdafc;
+		border-radius: 4px;
+		font-size: 12px	  
+	}
+	#pjo_title_edit4 {
+		padding-right:40px;
+	}
+
+		/***************** 프로젝트 이미지 박스  스타일 속성  *******************/
+	#pjo_img{
+		border:none;
+		background-color: white!important;
+		width:100%;
+		height:auto;
+		padding-left:20px;
+		margin-bottom : 10px;
+	}
+	#pjo_img img{
+		width:15px;
+	}
+		/***************** 프로젝트 이미지 디테일 박스  스타일 속성  *******************/
+	#pjo_img_edit{
+		border:none;
+		background-color: #f0f5ff;
+		width:100%;
+		height:auto;
+		padding-left:20px;
+		margin-bottom:0px; 
+		padding-bottom: 0px;
+	}
+	#pjo_img_edit img{
+		width: 100%;
+	}
+	.pjo_img_edit_1{
+		 line-height: 2;
+	}
+	#pjo_img_edit_img {
+		margin-top:10px;
+		margin-left:20px;
+		width:400px;
+	}
+	#pjo_img_edit_button_1 button{
+		border: 1px solid #B2B3B3;
+		width:200px;
+		text-align: center;
+		display: inline-block;
+		text-decoration: none;
+		font-size: 13px;
+		border-radius:5px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		background-color: #f0f5ff; 
+		color: black;
+	}
+		/***************** 프로젝트 요약  박스  스타일 속성  *******************/
+	#pjo_summary{
+		border:none;
+		background-color: white!important;
+		width:100%;
+		height:80px;
+		padding-left:20px;
+	}	
+	#pjo_summary img{
+		width:15px;
+	}
+		/***************** 프로젝트 요약 디테일 박스  스타일 속성  *******************/
+	#pjo_summary_edit{
+		border:none;
+		background-color: #f0f5ff;
+		width:100%;
+		height:350px;
+		padding-left:20px;
+	}
+	#pjo_summary_edit textarea {
+		width: 90%;
+		height:150px;
+		padding: 12px;
+		display: inline-block;
+		border: 1px solid #ccdafc;
+		border-radius: 4px;
+		font-size: 12px	  
+	}
+	#pjo_summary_edit_text {
+		margin-left: 0px;
+	}
+	#text1 {
+		margin-top: 2px;
+		font-size:10px
+	}
+	#pjo_summary_edit2 {
+		padding-right:40px;
+		padding-top: 40px;
+	}
+		/***************** 프로젝트 카테고리  박스  스타일 속성  *******************/
+	#pjo_category{
+		border:none;
+		background-color: white!important;
+		width:100%;
+		height:80px;
+		padding-left:20px;
+	}	
+	#pjo_category img{
+		width:15px;
+	}
+		/***************** 프로젝트 카테고리 디테일 박스  스타일 속성  *******************/
+	#pjo_category_edit{
+		border:none;
+		background-color: #f0f5ff;
+		width:100%;
+		height:200px;
+		padding-left:20px;
+	}
+	#pjo_category_select {
+	    width: 200px;
+	    height: 30px;
+	    font-size: 12px;
+	    border: 1px solid #E9DDDD;
+	    padding : 0px;
+	}
+		/***************** 프로젝트 페이지 박스  스타일 속성  *******************/
+	#pjo_page{
+		border:none;
+		background-color: white!important;
+		width:100%;
+		height:80px;
+		padding-left:20px;
+	}	
+	#pjo_page img{
+		width:15px;
+	}
+		/***************** 프로젝트 페이지 디테일 박스  스타일 속성  *******************/
+	#pjo_page_edit{
+		border:none;
+		background-color: #f0f5ff;
+		width:100%;
+		height:200px;
+		padding-left:20px;
+	}
+	#pjo_page_site {
+		border-style: none;
+		height:30px;
+		width:190px;
+		border-radius:4px;
+		background-color: #C3D4FC;
+		margin-top: 7px;
+	}
+	#pjo_page_site_2{
+		margin-top: 5px;
+		margin-left: 0px;
+	}
+	#pjo_page_edit input[type=text], select {
+		width: 200px;
+		height:30px;
+		padding: 12px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccdafc;
+		border-radius: 4px;
+		font-size: 12px	  
+	}
+		/***************** 프로젝트 태그 박스  스타일 속성  *******************/
+	#pjo_tag{
+		border:none;
+		background-color: white!important;
+		width:100%;
+		height:80px;
+		padding-left:20px;
+	}	
+	#pjo_tag img{
+		width:15px;
+	}
+		/***************** 프로젝트태그 디테일 박스  스타일 속성  *******************/
+	#pjo_tag_edit{
+		border:none;
+		background-color: #f0f5ff;
+		width:100%;
+		height:270px;
+		padding-left:20px;
+	}
+	#pjo_tag_edit input[type=text], select {
+		width: 95%;
+		height:30px;
+		padding: 12px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccdafc;
+		border-radius: 4px;
+		font-size: 12px	  
+	}
+		/***************** 창작자 *******************  *******************/
+	
+	#pjo_creator{
+		border:none;
+		width:100%;
+		border-radius:5px;
+		border-top-left-radius: 3px;
+   		border-top-right-radius: 5px;
+	}
+	#pjo_creator table{
+		border:1px solid#c5c5c5;
+		width:95%;
+	    border-top-left-radius: 3px;
+   		border-top-right-radius: 5px;
+	}
+	#pjo_creator table td{
+		border:1px solid#c5c5c5;
+	}
+
+	#pjo_creator .col-sm-5{
+		margin: 1px;
+		padding: 1px;
+		float: right;
+	}
+	#pjo_creator a {
+		text-decoration:none ; 
+		color:#000000;
+		cursor : default;
+	}
+	#pjo_creator .button{
+		border: none;
+		width: 100%;
+		text-align: center;
+		display: inline-block;
+		text-decoration: none;
+		font-size: 13px;
+		border-radius:5px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
+	#pjo_creator .button_cancle{
+		background-color: #e0e1e2; 
+		color: black;
+	}
+	#pjo_creator .button_save{
+		background-color: #635c9f;
+		color: white;
+	}
+	#pjo_creator .button_next{
+		background-color: #1859FB;
+		color: white;
+		float: right;
+		width : 60px;
+		margin-right: 60px;
+	}
+		/***************** 창작자 이미지 박스  스타일 속성  *******************/
+	#pjo_profile_img{
+		border:none;
+		background-color: white!important;
+		width:100%;
+		height:80px;
+		padding-left:20px;
+		margin-bottom : 10px;
+	}	
+	#pjo_profile_img img{
+		width:15px;
+	}
+		/***************** 창작자 이미지 디테일 박스  스타일 속성  *******************/
+	#pjo_profile_img_edit{
+		border:none;
+		background-color: #f0f5ff;
+		width:100%;
+		height:auto;
+		padding-left:20px;
+	}
+	/* 쌩붐팍 추가 */
+	#pjo_profile_img_edit img{
+		width: 50px;
+		height: 50px;
+		margin-left:20px;
+	}
+	#pjo_profile_img_1 {
+		width: 50px;
+		height: 50px;
+		margin-left: 20px;
+	}
+	/* 쌩붐팍 추가 */
+	#pjo_profile_img_edit_img {
+		margin-top:10px;
+		margin-left:20px;
+		width:400px;
+	}
+	#pjo_profile_img_edit_img_button_1 button{
+		border: 1px solid #B2B3B3;
+		width:200px;
+		text-align: center;
+		display: inline-block;
+		text-decoration: none;
+		font-size: 13px;
+		border-radius:5px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		background-color: #f0f5ff; 
+		color: black;
+	}
+		/***************** 창작자 이름 박스  스타일 속성  *******************/
+	#pjo_name{
+		border:none;
+		background-color: white!important;
+		width:100%;
+		height:80px;
+		padding-left:20px;
+	}	
+	#pjo_name img{
+		width:15px;
+	}
+		/***************** 창작자 이름 디테일 박스  스타일 속성  *******************/
+	#pjo_name_edit{
+		border:none;
+		background-color: #f0f5ff;
+		width:100%;
+		height:220px;
+		padding-left:20px;
+	}
+	#pjo_name_edit input[type=text]{
+		width: 30%;
+		height:30px;
+		padding: 12px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccdafc;
+		border-radius: 4px;
+		font-size: 12px	  
+	}
+		/***************** 창작자 소개 박스  스타일 속성  *******************/
+	#pjo_introduction{
+		border:none;
+		background-color: white!important;
+		width:100%;
+		height:80px;
+		padding-left:20px;
+	}	
+	#pjo_introduction img{
+		width:15px;
+	}
+		/***************** 창작자 소개 디테일 박스  스타일 속성  *******************/
+	#pjo_introduction_edit{
+		border:none;
+		background-color: #f0f5ff;
+		width:100%;
+		height:500px;
+		padding-left:20px;
+	}
+	#pjo_introduction_text {
+		border-style: none;
+		height:auto;
+		width:90%;
+		border-radius:4px;
+		margin-left:20px;
+		background-color: #E8EDF7;
+		margin-top: 7px;
+	}
+	#pjo_introduction_text_2{
+		margin-top: 10px;
+		margin-bottom: 10px;
+		margin-left: 0px;
+	}
+	#pjo_introduction_edit_text_length{
+		margin-right:60px;
+		float:right;
+	}
+	#pjo_introduction_edit_text textarea {
+		width: 90%;
+		height:150px;
+		padding: 12px;
+		margin-left:20px;
+		margin-top:5px;
+		display: inline-block;
+		border: 1px solid #ccdafc;
+		border-radius: 4px;
+		font-size: 12px	  
+	}
+		/***************** 창작자 활동지역 박스  스타일 속성  *******************/
+	#pjo_active_area{
+		border:none;
+		background-color: white!important;
+		width:100%;
+		height:80px;
+		padding-left:20px;
+	}	
+	#pjo_active_area img{
+		width:15px;
+	}
+		/***************** 창작자 활동지역 디테일 박스  스타일 속성  *******************/
+	#pjo_active_area_edit{
+		border:none;
+		background-color: #f0f5ff;
+		width:100%;
+		height:220px;
+		padding-left:20px;
+	}
+	#pjo_active_area_edit input[type=text]{
+		width: 80%;
+		height:30px;
+		padding: 12px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccdafc;
+		border-radius: 4px;
+		font-size: 12px	  
+	}
+	.modal-body.modal-fullsize{
+		height : auto;
+	}

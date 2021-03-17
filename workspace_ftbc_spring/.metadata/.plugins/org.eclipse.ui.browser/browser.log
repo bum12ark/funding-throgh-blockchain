@@ -1,0 +1,127 @@
+
+10월 04, 2019 18:53:01.57 NEW SESSION
+10월 04, 2019 18:53:01.57 [11396:7968:1004/185301.575:ERROR:CONSOLE(1)] "Refused to execute inline event handler because it violates the following Content Security Policy directive: "script-src 'strict-dynamic' 'sha256-1+GSDjMMklBjZY0QiWq+tGupCvajw4Xbn46ect2mZgM=' 'sha256-tCDoudW5/J/Alj3FMpQD7Hhf4u9RrSmCJLKqQnUos6g=' 'sha256-HqdPsO6hNmT/mfSeGdcX3eEGrZVva7AKD2Z2+1ujCZ8=' 'sha256-BcnvQDggot04zBRxv6gAGtlSZSQqR8mWXAE88yjPUkY=' 'sha256-IEF9PjeyU0vsr61C8cm3JQOerOYWdBsaGddCSPp6tZs=' 'sha256-RIDhH5uF+ciLoS6AP6ZkoxuwQyczkrTetThxXwVwFJI=' 'sha256-p07Ei562/+SaPLsvQViUdyTPe7g9IVno/tdWPTL3jA4='". Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution.
+10월 04, 2019 18:53:01.58 ", source: chrome-search://local-ntp/local-ntp.html (1)
+10월 04, 2019 19:50:28.92 [11396:7968:1004/195028.924:ERROR:CONSOLE(1)] "Refused to execute inline event handler because it violates the following Content Security Policy directive: "script-src 'strict-dynamic' 'sha256-1+GSDjMMklBjZY0QiWq+tGupCvajw4Xbn46ect2mZgM=' 'sha256-tCDoudW5/J/Alj3FMpQD7Hhf4u9RrSmCJLKqQnUos6g=' 'sha256-HqdPsO6hNmT/mfSeGdcX3eEGrZVva7AKD2Z2+1ujCZ8=' 'sha256-BcnvQDggot04zBRxv6gAGtlSZSQqR8mWXAE88yjPUkY=' 'sha256-IEF9PjeyU0vsr61C8cm3JQOerOYWdBsaGddCSPp6tZs=' 'sha256-RIDhH5uF+ciLoS6AP6ZkoxuwQyczkrTetThxXwVwFJI=' 'sha256-p07Ei562/+SaPLsvQViUdyTPe7g9IVno/tdWPTL3jA4='". Either the 'unsafe-inline' keyword, a hash ('sha256-...'), or a nonce ('nonce-...') is required to enable inline execution.
+10월 04, 2019 19:50:28.93 ", source: chrome-search://local-ntp/local-ntp.html (1)
+10월 04, 2019 21:21:55.98 
+10월 04, 2019 21:21:55.98 KLIB_SelfTest return : KLR_OK
+
+10월 07, 2019 10:32:44.01 NEW SESSION
+10월 07, 2019 10:32:44.01 
+10월 07, 2019 10:32:44.02 KLIB_SelfTest return : KLR_OK
+
+10월 10, 2019 20:28:08.33 NEW SESSION
+10월 10, 2019 20:28:08.33 
+10월 10, 2019 20:28:08.33 KLIB_SelfTest return : KLR_OK
+10월 10, 2019 20:35:02.01 [8968:17644:1010/203502.012:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 10, 2019 20:35:02.01 [8968:17644:1010/203502.012:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 10, 2019 20:37:55.96 
+10월 10, 2019 20:37:55.97 KLIB_SelfTest return : KLR_OK
+
+10월 11, 2019 11:06:16.89 NEW SESSION
+10월 11, 2019 11:06:16.89 
+10월 11, 2019 11:06:16.90 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 11:48:52.92 
+10월 11, 2019 11:48:52.93 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 11:56:18.46 [16024:13928:1011/115618.466:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 11, 2019 11:56:18.54 [16024:13928:1011/115618.496:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 11, 2019 11:56:31.85 
+10월 11, 2019 11:56:31.86 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 12:00:07.66 
+10월 11, 2019 12:00:07.67 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 12:06:36.14 
+10월 11, 2019 12:06:36.15 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 12:10:50.94 
+10월 11, 2019 12:10:50.94 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 12:12:41.81 
+10월 11, 2019 12:12:41.81 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 12:20:21.52 [12220:8104:1011/122021.527:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 11, 2019 12:20:21.53 [12220:8104:1011/122021.528:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 11, 2019 12:35:11.65 
+10월 11, 2019 12:35:11.66 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 12:44:19.97 [9848:6872:1011/124419.972:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 11, 2019 12:44:19.98 [9848:6872:1011/124419.972:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 11, 2019 12:46:12.57 
+10월 11, 2019 12:46:12.58 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 12:49:26.48 [8292:16568:1011/124926.484:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 11, 2019 12:49:26.49 [8292:16568:1011/124926.484:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 11, 2019 13:11:11.16 
+10월 11, 2019 13:11:11.17 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 13:15:24.19 
+10월 11, 2019 13:15:24.19 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 13:17:47.53 
+10월 11, 2019 13:17:47.53 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 15:03:12.93 
+10월 11, 2019 15:03:12.93 KLIB_SelfTest return : KLR_OK
+10월 11, 2019 16:14:47.72 [7044:112:1011/161447.729:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 11, 2019 16:14:47.73 [7044:112:1011/161447.729:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 11, 2019 18:06:01.59 
+10월 11, 2019 18:06:01.59 KLIB_SelfTest return : KLR_OK
+
+10월 14, 2019 11:30:39.10 NEW SESSION
+10월 14, 2019 11:30:39.10 
+10월 14, 2019 11:30:39.10 KLIB_SelfTest return : KLR_OK
+10월 14, 2019 11:33:42.53 
+10월 14, 2019 11:33:42.54 KLIB_SelfTest return : KLR_OK
+10월 14, 2019 11:37:53.36 
+10월 14, 2019 11:37:53.37 KLIB_SelfTest return : KLR_OK
+10월 14, 2019 11:40:51.41 
+10월 14, 2019 11:40:51.41 KLIB_SelfTest return : KLR_OK
+10월 14, 2019 11:57:21.73 
+10월 14, 2019 11:57:21.74 KLIB_SelfTest return : KLR_OK
+10월 14, 2019 11:58:23.13 
+10월 14, 2019 11:58:23.13 KLIB_SelfTest return : KLR_OK
+10월 14, 2019 12:16:40.64 
+10월 14, 2019 12:16:40.65 KLIB_SelfTest return : KLR_OK
+
+10월 17, 2019 18:59:33.12 NEW SESSION
+10월 17, 2019 18:59:33.12 
+10월 17, 2019 18:59:33.13 KLIB_SelfTest return : KLR_OK
+10월 17, 2019 21:15:22.00 [4664:8228:1017/211522.001:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 17, 2019 21:15:22.01 [4664:8228:1017/211522.001:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 17, 2019 21:16:16.96 [4664:8228:1017/211616.960:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 17, 2019 21:16:16.96 [4664:8228:1017/211616.961:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 17, 2019 21:16:45.14 [4664:8228:1017/211645.142:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 17, 2019 21:16:45.16 [4664:8228:1017/211645.142:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 17, 2019 21:17:11.48 
+10월 17, 2019 21:17:11.48 KLIB_SelfTest return : KLR_OK
+
+10월 18, 2019 13:15:21.29 NEW SESSION
+10월 18, 2019 13:15:21.29 [10968:11284:1018/131521.289:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 18, 2019 13:15:21.29 [10968:11284:1018/131521.289:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 18, 2019 13:16:25.53 [10968:11284:1018/131625.533:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 18, 2019 13:16:25.53 [10968:11284:1018/131625.533:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 18, 2019 16:57:30.20 [10968:10568:1018/165730.199:ERROR:socket_stream.cc(219)] Closing stream with result -2
+10월 18, 2019 17:31:55.91 
+10월 18, 2019 17:31:55.92 KLIB_SelfTest return : KLR_OK
+10월 18, 2019 19:24:32.79 
+10월 18, 2019 19:24:32.80 KLIB_SelfTest return : KLR_OK
+10월 18, 2019 19:41:32.15 [8832:3384:1018/194132.156:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 18, 2019 19:41:32.16 [8832:3384:1018/194132.156:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+
+10월 18, 2019 20:07:58.36 NEW SESSION
+10월 18, 2019 20:07:58.36 [14104:14108:1018/200758.363:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 18, 2019 20:07:58.37 [14104:14108:1018/200758.364:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 18, 2019 20:09:27.71 [14104:14108:1018/200927.711:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 18, 2019 20:09:27.71 [14104:14108:1018/200927.711:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 18, 2019 20:10:59.32 [14104:14108:1018/201059.328:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 18, 2019 20:10:59.33 [14104:14108:1018/201059.333:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 18, 2019 20:18:53.02 [14104:14108:1018/201853.028:ERROR:CONSOLE(5258)] "Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (5258)
+10월 18, 2019 20:18:53.03 [14104:14108:1018/201853.029:ERROR:CONSOLE(8033)] "Extension server error: Inspector protocol error: Cannot find context with specified id", source: devtools://devtools/bundled/shell.js (8033)
+10월 18, 2019 20:28:52.71 
+10월 18, 2019 20:28:52.72 KLIB_SelfTest return : KLR_OK
+
+10월 21, 2019 22:32:21.11 NEW SESSION
+10월 21, 2019 22:32:21.11 
+10월 21, 2019 22:32:21.11 KLIB_SelfTest return : KLR_OK
+
+10월 23, 2019 13:12:39.70 NEW SESSION
+10월 23, 2019 13:12:39.71 
+10월 23, 2019 13:12:39.71 KLIB_SelfTest return : KLR_OK
+
+10월 30, 2019 14:58:18.02 NEW SESSION
+10월 30, 2019 14:58:18.02 
+10월 30, 2019 14:58:18.03 KLIB_SelfTest return : KLR_OK
+10월 30, 2019 14:58:32.09 
+10월 30, 2019 14:58:32.10 KLIB_SelfTest return : KLR_OK

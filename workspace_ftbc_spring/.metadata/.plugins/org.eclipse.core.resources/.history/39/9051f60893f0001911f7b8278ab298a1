@@ -1,0 +1,41 @@
+@charset "UTF-8";
+	/********************[상단   부분]*******************/
+	#BlockChain_banner{
+		height: 150px;
+		width:110%;
+		background-color: #dcd9ec;
+		display:table;
+		margin-left:-80px;
+	}
+	
+	#BlockChain_banner h2{
+	 	font-size: 50px;
+		font-weight: 700;
+		line-height: 120px;
+		color:  #453e82;
+	}
+	#BlockChain_banner img{
+		height:70px;
+		margin-left:20px;
+		margin-bottom:10px;
+	}
+	
+	/*********************[내용 부분]**************************/
+	.table th{
+		padding-left:20px;
+	}
+	#BlockMain_empty{
+		 margin-top:40px;
+	}
+	
+	#paging{
+		margin-top:15px;
+		font-size:20px;
+		text-align:center;
+	}
+	#pageBar{
+		text-align: center;
+	}
+	#pageBar a, b{
+		font-size: 20px !important;
+	}

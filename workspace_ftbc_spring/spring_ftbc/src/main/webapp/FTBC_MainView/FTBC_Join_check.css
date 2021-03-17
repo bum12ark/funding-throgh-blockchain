@@ -1,0 +1,94 @@
+@charset "UTF-8";
+	#join_check_box{
+		border-color:gainsboro;
+		border: 2px solid #e4e4e4;
+		width:400px;
+		height:auto;
+		position:relative;
+		margin-top:20px;
+		top:25%;
+		left:25%;
+		display:inline-block;
+		border-radius: 5px;
+		padding-bottom: 30px;
+	}
+	#join_check_box a{
+		color: #FF4543;
+	}	
+	#join_check_box hr{
+		height: 1px;
+    	background: #B2B3B3;
+		width: 80%;
+	}	
+	#join_check_box button{
+		width: 80%;
+		padding: 5px;
+		border: none;
+		text-align: center;
+		display: inline-block;
+		text-decoration: none;
+		margin: 15;
+		matgin-right:10px;
+		font-size: 13px;
+		border-radius:5px;
+		padding-top: 5px;
+		padding-bottom: 5px;
+		color: white;
+		height: 50px;
+	}
+	#hr_one{
+		margin-top: 30px;
+		margin-bottom : 30px;
+	}
+	#check_title{
+		text-align: center;
+		width: 80%; 
+		margin-left: 40px;
+	}
+	.line {
+		width: 90%; 
+		margin-left: 20px; 
+		margin-right: 10px; 
+		padding-left: 10px; 
+		padding-right: 10px; 
+		text-align: center; 
+		font-size:12px;
+	}
+	.line:after {
+		display: inline-block; 
+		margin: 0 0 3px 20px; 
+		height: 1px; 
+		content: " "; 
+		text-shadow: none; 
+		background-color: #B2B3B3; 
+		width: 37%; 
+	}
+	.line:before {
+		display: inline-block; 
+		margin: 0 20px 3px 0; 
+		height: 1px; 
+		content: " "; 
+		text-shadow: none; 
+		background-color: #B2B3B3; 
+		width: 37%;
+	}
+	#Consent{
+		width: 80%;
+		margin-left: 40px;
+		text-align: center;
+	}
+	#check_box{
+		float: left;
+		width: 80%;
+		margin-left: 40px;
+		margin-top: 5px;
+	}
+	#agg_1{
+		margin-left: 0;
+	}
+	#check_join {
+		margin-top: 30px;
+		margin-left : 40px;
+		background-color: #FF4543;
+	}
+	

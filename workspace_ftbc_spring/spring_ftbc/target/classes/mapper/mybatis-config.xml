@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias alias="mVO" type="vo.MemberVO"/>
+	</typeAliases>
+	<mappers>
+		<mapper resource="mybatis/mapper/chain.xml" />
+		<mapper resource="mybatis/mapper/member.xml" />
+		<mapper resource="mybatis/mapper/project.xml"/>
+		<mapper resource="mybatis/mapper/init.xml"/>
+	</mappers>
+</configuration> 

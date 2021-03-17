@@ -1,0 +1,13 @@
+package blockchain.test;
+
+import java.io.UnsupportedEncodingException;
+import java.security.GeneralSecurityException;
+import java.security.NoSuchAlgorithmException;
+
+public class AES256Test {
+	public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException, GeneralSecurityException {
+		AES256Util aes = new AES256Util("키값");
+		String plainTxt = aes.encrypt("평문");
+		System.out.println(plainTxt);
+	}
+}

@@ -1,0 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function formTest() {
+			var obj = document.getElementById("div_t");
+			var newForm = document.createElement("form");
+			obj.appendChild(newForm);
+		}
+	</script>
+	<div id="div_t">
+		<button onclick="formTest"></button>
+		<input type="text" value="인풋1">
+		<input type="text" value="인풋2">
+	</div>
+</body>
+</html>

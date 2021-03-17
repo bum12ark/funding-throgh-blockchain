@@ -1,0 +1,643 @@
+@charset "UTF-8";
+	#goalMoney,#projectEndDate{
+	   border:none;
+	   width:100%;
+	   height:80px;
+	   overflow:hidden;
+	   padding-left:20px;
+	   padding-top:15px;
+	
+	}
+	#goalMoney:hover,#projectEndDate:hover,#refundAndExchanges:hover,#giftConfigAddBox:hover{
+	   background:#F5F8FF;
+	}
+	#giftConfigAddBox:hover, #itemAdd:hover{
+	   background:#F5F8FF;
+	}
+	#giftConfigAddBox{
+	   border: none;
+	   border-radius:5px;
+	   background-color: white;
+	   width:100%;
+	   height:135px;
+	   overflow:hidden;
+	   padding-left:20px;
+	   align:center;
+	}
+	#refundAndExchanges{
+	   border: none;
+	   border-radius:5px;
+	   background-color: white;
+	   width:100%;
+	   overflow:hidden;
+	   padding-left:20px;
+	   padding-top: 15px;
+	   height:auto;
+	}
+	#productInfoReport,#certificationDocument{
+	   border: none;
+	   border-radius:5px;
+	   background-color: white!important;
+	   width:100%;
+	   height:auto;
+	   overflow:hidden;
+	   padding-left:20px;
+	}
+	#giftInfo{
+	   border: none;
+	   border-radius:5px;
+	   background-color: white!important;
+	   width:100%;
+	   height:auto;
+	   overflow:hidden;
+	   padding-left:20px;
+	   padding-bottom:10px;
+	   padding-top:15px;
+	}
+	#giftAddRow1{
+	   text-align:center;
+	   padding-top:15px;
+	}
+	#giftAddRow2{
+	   text-align:center;
+	   height:auto;
+	}
+	#giftAddRowInputButton {
+	   margin-top:10px;
+	   text-align:center;
+	}
+	#itemAddRowInputButton{
+	   text-align:center;
+	   overflow:hidden;
+	   height:auto;
+	}
+	#itemAddRowInputButton button{
+	   margin-top:5px;
+	   border:2px solid #635c9f;
+	   border-radius:5px;
+	    background-color: transparent !important;
+	   color:#635c9f;
+	   width:105px;
+	   height:33px;
+	}
+	#giftAddRowInputButton button{
+	   margin-top:5px;
+	   border:2px solid #635c9f;
+	   border-radius:5px;
+	    background-color: transparent !important;
+	   color:#635c9f;
+	   width:105px;
+	   height:33px;
+	}
+	#itemAddRow1{
+	   text-align:center;
+	   padding-top:15px;
+	}
+	#itemAddRow1 label{
+	   padding-right:15px;
+	}
+	
+	#itemAddRow2{
+	   text-align:center;
+	   height:auto;
+	}
+	#moneyEstimatedDate{
+	   border: none;
+	   border-radius:5px;
+	   width:100%;
+	   height:75px;
+	   overflow:hidden;
+	   padding-left:20px;
+	}
+	#moneyEstimatedDate .row .col-xs-10{
+	   padding-top:10px;
+	}
+	   /***************** 프로젝트 제목 박스 안 row 클래스 스타일 속성  *******************/
+	#goalMoney.row ,#projectEndDate.row,#moneyEstimatedDate.row,#giftConfigAddBox.row
+	,#refundAndExchanges.row,#productInfoReport.row,#certificationDocument.row,#giftInfo.row{
+	   margin-top: 10px;
+	}
+	
+	   /***************** 프로젝트 제목 박스 안 이미지 태그 스타일 속성 *******************/
+	#goalMoney img,#projectEndDate img,#refundAndExchanges img,#productInfoReport img
+	,#certificationDocument img,#giftInfo img
+	{
+	   width:15px;
+	}
+	#goalMoneyShow {
+	   border: none;
+	   border-radius:5px;
+	   background-color:#F0F5FF;
+	   width:100%;
+	   height:auto;
+	   overflow:hidden;
+	   padding-left:20px;
+	   padding-top:15px;
+	   padding-bottom:15px;
+	}
+	#goalMoneyShowMoney{
+	   padding-left:20px;
+	}
+	#goalMoneyGuideTalk{
+	   display:block;
+	}
+	#goalMoneyInput{
+	   margin-left:15px;
+	   text-align:center;
+	   width:120px;
+	   padding-right:5px;
+	   display:inline-block;
+	   margin-top:5px;
+	   border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	   }
+	#goalMoneyOutput{
+	   text-align:center;
+	   width:120px;
+	   padding-right:5px;
+	   display:inline-block;
+	   background-color:transparent;
+	   border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	}
+	#commissionCalculation{
+	   background-color:#E8EDF7;
+	   padding-right:20px;
+	   padding-left:20px;
+	   margin-top:5px;
+	}
+	#goalPriceButton,#projectEndDateButton,#giftConfigButton,#refundAndExchangeButton{
+	   text-align:right;
+	   padding-right:20px;
+	   width:100%;
+	   height:auto;
+	   margin-top:5px;
+	}
+	#goalPriceCancelButton,#projectEndDateCancelButton,#giftConfigCancelButton,#refundAndExchangeCancelButton,#itemAddCancelButton
+	,#deleteCancelButton{
+	   background-color:#CACBCD;
+	   padding:5px;
+	   color:#7B7B7D;
+	}
+	#goalPriceConfirmButton,#projectEndDateConfirmButton,#giftConfigConfirmButton,#refundAndExchangeConfirmButton,#itemAddConfirmButton
+	,#deleteConfirmButton{
+	   background-color:#635c9f;
+	   color:#FFFFFF;
+	   padding:5px;
+	}
+	.button{
+	   width:auto;
+	   height:auto;
+	   font-size:14px;
+	}
+	.btn {
+	   font-size:14px;
+	}
+	#projectEndDateShow{
+	   border: none;
+	   border-radius:5px;
+	   background-color:#F0F5FF;
+	   width:100%;
+	   height:auto;
+	   overflow:hidden;
+	   padding-left:20px;
+	   padding-top:15px;
+	   padding-bottom:15px;
+	}
+	#projectEndDateLabel{
+	   padding-left:20px;
+	}
+	#endDateConfirmGuide{
+	   background-color:#E8EDF7;
+	   padding-right:20px;
+	   padding-left:20px;
+	   margin-top:5px;
+	}
+	 #moneyEstimatedDateShow{
+	    border: none;
+	   border-radius:5px;
+	   background-color:#F6F5F5;
+	   width:100%;
+	   height:auto;
+	   overflow:hidden;
+	   padding-left:20px;
+	   padding-top:15px;
+	 }
+	 #payEndDate,#receiptDate{
+	    text-align: center;
+	    width:auto;
+	    border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	 }
+	 #datepicker{
+	    text-align: center;
+	    width:auto;
+	    display:inline-block;    
+	    margin-left:15px;
+	    border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	 }
+	 #giftConfigShow{
+	    border: none;
+	   border-radius:5px;
+	   background-color:#F0F5FF;
+	   width:100%;
+	   height:auto;
+	   overflow:hidden;
+	   padding-left:20px;
+	   padding-right:20px;
+	   padding-top:15px;
+	   padding-bottom:15px;
+	 }
+	 #giftConfigShow .row label{
+	   padding-left:20px;    
+	 }
+	 input[type="number"]::-webkit-outer-spin-button,
+	 input[type="number"]::-webkit-inner-spin-button{
+	    -webkit-appearance: none;
+	 }
+	 input[type="text"]{
+	    padding: .1em .1em;
+	 }
+	 #datepicker,#payEndDate,#receiptDate {
+	    width:auto;
+	    text-align:center;
+	 }
+	 .row .col-xs-9 input[type="number"]{
+	    width:50px;
+	 }
+	 #giftTextAreaInput{
+	    margin-top:5px;
+	    width:350px;
+	    height:auto;
+	    border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	 }
+	 #deliveryDayInput{
+	    margin-top:5px;
+	    width:200px;
+	    border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	 }
+	 #deliveryDayOutput{
+	    margin-left:5px;
+	 }
+	 #refundTextArea{
+	    width:100%;
+	    max-height: 300px;
+	    line-height: 3rem;
+	    border: 2px solid #ccdafc;
+	    padding: .78571429em 1em;
+	    outline: none;
+	    margin-top:5px;
+	 }
+	 #refundAndExchangesShow .row .col-xs-12 textarea{
+	    margin-right:20px;
+	 }
+	 #refundAndExchangesShow{
+	   border: none;
+	   border-radius:5px;
+	   background-color:#F0F5FF;
+	   width:100%;
+	   height:auto;
+	   overflow:hidden;
+	   padding-left:20px;   
+	   padding-top:15px;
+	   padding-bottom:15px;
+	 }
+	 #refundAndExchangesShow .row label{
+	    padding-left:20px;
+	 }
+	 #backButton{
+	    background-color:#
+	 }
+	#jugwanSicInput,#multipleChoiceInput{
+	   height:auto;
+	   width:95%;
+	   margin-left:20px;
+	}
+	#multipleChoiceOptionInput{
+	   width:200px;
+	   margin-left:20px;
+	}
+	#tbodyMultipleChoiceInput{
+	   height:auto;
+	   width:95%;
+	   margin-left:20px;
+	}
+	#tbodyJugwanSicInput{
+	   height:auto;
+	   width:95%;
+	   margin-left:20px;
+	}
+	#itemAddShow{
+	   border:1px solid #c5c5c5;
+	   border-radius:5px;
+	   background-color:#F0F5FF;
+	   width:100%;
+	   height:auto;
+	   overflow:hidden;
+	   padding-left:20px;   
+	   padding-right:20px;
+	   padding-top:15px;
+	   padding-bottom :15px;
+	   margin-bottom:20px;
+	}
+	#itemListAddEditShow0,#itemListAddEditShow1,#itemListAddEditShow2,#itemListAddEditShow3,#itemListAddEditShow4{
+	   border: none;
+	   border-radius:5px;
+	   background-color:#F0F5FF;
+	   width:100%;
+	   height:auto;
+	   overflow:hidden;
+	   padding-left:20px;   
+	   padding-right:20px;
+	   padding-top:15px;
+	   padding-bottom :15px;
+	}
+	#itemListAddDeleteShow{
+	   border: none;
+	   border-radius:5px;
+	   background-color:#f6f5f5;
+	   width:100%;
+	   height:auto;
+	   overflow:hidden;
+	   padding-left:20px;   
+	   padding-right:20px;
+	   padding-top:15px;
+	   padding-bottom :15px;
+	}
+	#itemListAddDeleteShow .row b{
+	   margin-left:5px;
+	}
+	#itemListAddDeleteShow .row {
+	   margin-left:5px;
+	}
+	#itemAddShow .row label{
+	   padding-left:20px;
+	}
+	#newMakeItemName0,#newMakeItemName1,#newMakeItemName2,#newMakeItemName3,#newMakeItemName4,#newMakeItemName5{
+	   margin-left:20px;
+	   width:95%;
+	   border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	}
+	#modalFooterCloseButton{
+	   background-color:#CACBCD;
+	   color:#7B7B7D;   
+	}
+	#bottomPreNextButton a .button_next{
+	   background-color: #1859FB;
+	   color: white;
+	   float: right;
+	   width : 60px;
+	   margin-right:0;
+	}
+	.button_pre{
+	   background-color: #1859FB;
+	   color: white;
+	   float: left;
+	   width : 60px;
+	}
+	 #itemAdd{
+	    border: 1px solid #c5c5c5;
+	   border-radius:5px;
+	   background-color: white;
+	   width:100%;
+	   height:auto;
+	   overflow:hidden;
+	   padding-bottom:20px;
+	   margin-bottom:20px;
+	 }
+	 #itemAddButton{
+	    text-align:right;
+	    padding-right:20px;
+	 }
+	 #deleteButton{
+	     text-align:right;
+	    padding-right:15px;
+	    margin-top:5px;
+	 }
+	 #deleteCheck{
+	    margin-top:5px;
+	 }
+	 #itemListHeader{
+	    border: 1px solid #c5c5c5;
+	    margin-left:15px;
+	    border-radius:5px;
+	 }
+	 #itemListHeader thead tr th{
+	    padding-left:5px;
+	 }
+	 #itemListInput .row{
+	     padding-left:20px;
+	   padding-right:20px;
+	 }
+	 #modalItemEditDelete{
+	    float:right;
+	    text-align:right;
+	    padding-right:20px
+	 }
+	 #fundGoalSet table{
+	    border:1px solid#c5c5c5;
+	   width:100%;
+	
+	 }
+	 #fundGoalSet table td{
+	   border:1px solid#c5c5c5;
+	   height: auto;   
+	   border-top-left-radius: 3px;
+	      border-top-right-radius: 5px;
+	 }
+	 #fundGoalSet{
+	    margin-bottom:20px;
+	 }
+	 #estimatedSettlementDate table{
+	     border:1px solid#c5c5c5;
+	   width:100%;
+	 }
+	 #estimatedSettlementDate table td{
+	    border:1px solid#c5c5c5;
+	   height: auto; 
+	 }
+	 #estimatedSettlementDate{
+	    margin-bottom:20px;
+	 }
+	 #giftConfigurationTable {
+	     border:none;
+	   width:100%;
+	    border-top-left-radius: 3px;
+	      border-top-right-radius: 5px;
+	      
+	 }
+	 #giftConfiguration table td{
+	     border:1px solid#c5c5c5;
+	   height: auto; 
+	 }
+	 #giftConfiguration{
+	    margin-bottom:20px;
+	 }
+	 #giftAddInfo table {
+	     border:none;
+	   width:100%;
+	    border-top-left-radius: 3px;
+	      border-top-right-radius: 5px;
+	 }
+	 #giftAddInfo table td{
+	    border:1px solid#c5c5c5;
+	   height: auto;    
+	   
+	 }
+	 #giftAddInfo{
+	    margin-bottom:20px;
+	 }
+	 #giftAddButtonForm table{
+	     border:none;
+	   width:100%;
+	    border-top-left-radius: 3px;
+	      border-top-right-radius: 5px;    
+	 }
+	 #giftAddButtonForm table td{
+	    border:1px solid#c5c5c5;
+	   height: auto;    
+	 }
+	 #giftAddButtonForm{
+	    margin-bottom:20px;
+	 }
+	 #refundAndExchangePolicy table{
+	     border:none;
+	   width:100%;
+	    border-top-left-radius: 3px;
+	      border-top-right-radius: 5px;
+	 }
+	 #refundAndExchangePolicy table td{
+	    border:1px solid#c5c5c5;
+	 }
+	 #refundAndExchangePolicy{
+	    margin-bottom:20px;
+	 }
+	#minDonationMoneyInput{
+	   display:inline-block;
+	   width:120px;
+	   margin-top:5px;
+	   text-align:center;
+	   border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	}
+	#minDonationMoneyOutput{
+	   display:inline-block;
+	}
+	#giftConfigList{
+	    border: 1px solid #c5c5c5;
+	   margin-top:5px;
+	   margin-left:15px;
+	}
+	#giftConfigList thead tr th{
+	   padding-left:5px;
+	}
+	#giftIncludingList{
+	   margin-top:5px;
+	}
+	#itemQuantityOption0,#itemQuantityOption1,#itemQuantityOption2,#itemQuantityOption3,#itemQuantityOption4{
+	   display:inline-block;
+	   width:50px;
+	   text-align:center;
+	   margin-left:5px;
+	   margin-right:5px;
+	}
+	#itemAdmin{
+	   float:right;
+	   padding-right:20px;
+	   margin-top:5px;
+	}
+	#itemAdmin button{
+	   background-color:#3a6ff2;
+	   color:#fff;
+	   padding:10px;
+	      border-radius: 5px;
+	      board:none;
+	}
+	#itemListNameOutput0,#itemListNameOutput1,#itemListNameOutput2,#itemListNameOutput3,#itemListNameOutput4{
+	   background-color:transparent;
+	   border:none;
+	}
+	#itemListOptionOutput0,#itemListOptionOutput1,#itemListOptionOutput2,#itemListOptionOutput3,#itemListOptionOutput4{
+	   background-color:transparent;
+	   border:none;
+	}
+	#itemListNameInput0,#itemListNameInput1,#itemListNameInput2,#itemListNameInput3,#itemListNameInput4{
+	   background-color:transparent;
+	   border:none;
+	}
+	#itemListOptionInput0,#itemListOptionInput1,#itemListOptionInput2,#itemListOptionInput3,#itemListOptionInput4{
+	   background-color:transparent;
+	   border:none;
+	}
+	#itemListEditButton{
+	   margin-left:5px;
+	   display:inline-block;
+	   border:none;
+	}
+	#itemListDeleteButton{
+	   border:none;
+	}
+	#limitedQuantity{
+	   width:60px;
+	   display:inline-block;
+	   background-color:transparent;
+	   height:30px;
+	   border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	}
+	#limitedAndDeliveryCheck{
+	   margin-top:5px;
+	}
+	#deliveryCheckBox{
+	   margin-left:10px;
+	}
+	#datepickerRow{
+	   margin-top:5px;
+	}
+	#refundAndExchangeOutput .row .col-xs-2{
+	   text-align: left;
+	    margin-right:
+	}
+	#refundAndExchangeOutput{
+	   padding-top: 10px;
+	   padding-left:20px;
+	   padding-bottom:10px;
+	   border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	}
+	#refundAndExchangeOutput label{
+	   padding-left:20px;
+	}
+	#limitedAndDeliveryInputQuantity{
+	   display:inline-block;
+	}
+	#limitedQuantityInput{
+	   width:60px;
+	   display:inline-block;
+	}
+	#refundAndExchangeSpan{
+	   width:100%;
+	   height:600px;
+	   border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	}
+	#projectEndDateOutput{
+	   border: 1px solid #ccdafc;
+	   border-radius: 4px;
+	   text-align:center;
+	}
+	.ilbanText{
+	   border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	}
+	.chundanwigubun{
+	   border: 1px solid #ccdafc;
+	    border-radius: 4px;
+	}
+	body:not(.modal-open){
+	  padding-right: 0px !important;
+	}

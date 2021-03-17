@@ -1,0 +1,15 @@
+package blockchain.test;
+
+import blockchain.BlockChain;
+import blockchain.util.Base64Conversion;
+import exe.util.Path;
+
+public class Test2 {
+
+	public static void main(String[] args) throws Exception {
+		String str = Base64Conversion.importChain("FTBC", Path.SERVER_CHAIN_PATH);
+		BlockChain blockChain = (BlockChain) Base64Conversion.decodeBase64(str);
+		System.out.println("블체 사이즈 : "+blockChain.blockChain.size());
+		blockChain.syncUTXOs();
+	}
+}

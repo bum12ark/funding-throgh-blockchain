@@ -1,0 +1,29 @@
+package server.initialize;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import blockchain.util.CommonSet;
+/*
+ * 서버 기동 시 초기화가 필요한 녀석
+ */
+@Component
+public class Init {
+	private static final Logger logger = LoggerFactory.getLogger(Init.class);
+	@Autowired
+	private InitLogic initializeLogic;
+	private CommonSet commonSet;
+	public Init() {
+		logger.info("Initialize 생성자 호출");
+		commonSet = CommonSet.getInstance();
+	}
+	//# 서버 기동 시 프로젝트 월렛 초기화
+	//1) 공개키 : DB 2) 개인키 : 서버 로컬 저장소
+	public void initPjWallet() {
+		initializeLogic.initPjWallet();
+	}
+	
+	
+}

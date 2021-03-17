@@ -1,0 +1,155 @@
+@charset "UTF-8";
+	.row{
+		margin-right: 0 !important;
+	}
+/********************[상단   부분]*******************/
+	#EditAccount_top{
+		height: 150px;
+		width:110%;
+		background-color: #dcd9ec;
+		display:table;
+	}
+	
+	#EditAccount_top h2{
+	 	font-size: 44px;
+		font-weight: 700;
+		line-height: 100px;
+		color:  #453e82;
+	}
+	#EditAccount_a{
+		text-align:center;
+		text-decoration: none;
+		margin-left:70px;
+	}
+	.EditAccount_a a{
+		display:table-cell;
+		vertical-align:middle;
+		text-align:center;
+		font-size: 15px;
+		font-weight: 500;
+		line-height: 20px;
+		text-decoration: none solid rgb(135, 135, 135);
+		color:  #878787;
+		cursor: pointer;
+		padding: 13px;
+		top:50%;
+		height:150px;
+		margin-top: -70px;
+	}
+	.EditAccount_a a:hover,.EditAccount_a a:focus {
+	    color: #000000;
+	    text-decoration: none;
+	}	
+/********************[내용   부분]*******************/	
+	.edit_ac{
+		border-top: 1px solid  #EBE8E8;
+		border-bottom: 1px solid  #FFFFFF;
+		padding: 25px 0 25px 0;
+	}
+	
+	.labelbox {
+		text-align: right;
+	}
+	.labelbox label{
+		font-size: 13px;
+		font-weight: 500;
+		line-height: 28px;
+		text-decoration: none solid rgb(103, 99, 99);
+		color:  #676363;
+	}
+	.edit_txtbox{
+		font-size: 16px;
+		background-color:  #dcd9ec;
+		color:  #7D7D7D;
+		border-radius:5px;
+		border-top: 0px solid  #E7E5E5;
+		border-right: 0px solid  #E7E5E5;
+		border-bottom: 0px solid  #CFCACA;
+		border-left: 0px solid  #E7E5E5;
+		margin: 0 0 0 16px;
+		padding: 8px 5px 8px 5px;
+		min-height: 1px;
+		cursor: text;
+	}
+	
+	.row p{
+		font-size: 13px;
+		line-height: 22.75px;
+		color:  #676363;
+		margin: 10px 0 0 20px;
+		word-spacing: 0.7px;
+	}
+	/****************[이메일 변경]****************/
+	#edit_eamil{
+		margin-top:15px;
+		border-bottom: 1px solid  #FFFFFF;
+		padding: 25px 0 25px 0;
+	}
+	#email_tbox{
+		width:auto;
+	}
+	#edit_email_btn{
+		font-size:14px;
+		line-height:20px;
+		text-align:center;
+		background-color:#FFFFFF;
+		color:#4B82F0;
+		border:none;
+		border-radius:5px;
+		cursor:pointer;
+	}
+	
+	#edit_email_btn:hover{
+		border:2px solid #F0F4FE;
+		background-color: #F0F4FE;
+	}
+	
+	#edit_email_btn:focus{
+		border: 2px solid #D0D0D0;
+		background-color:#FFFFFF;
+		outline:none;
+	}
+	
+	/****************[비밀번호 변경]****************/
+	#pw_tbox1, #pw_tbox2{
+		width:200px;
+		margin-left: 0 !important;
+	}
+
+	/****************[페이지 주소 변경]****************/
+	#page_tbox{
+		width:150px;
+		margin-left: 0 !important;
+	}
+	#account_page{
+		font-family: Menlo, "Courier New", Courier, monospace;
+		font-size:14px;
+		line-height:22px;
+		color:  #676363;
+		margin: 0 0 0 10px;
+		word-wrap: break-word
+	}
+	/****************[뉴스레터 변경]****************/
+	#edit_news span{
+		color:  #676363;
+		font-size: 14px;
+		margin: 0 0 0 7px;
+	}
+	#news_cbox{
+		width: 13px;
+		margin: 0 0 0 16px;
+	}
+	
+	/****************[수정하기 버튼]****************/
+	#edit_ac_button{
+		color:  white;
+		font-size: 14px;
+		text-align: center;
+		vertical-align: middle;
+		background-color: #635c9f;
+		height: 48px;
+		width: 144px;
+		border-radius: 5px;
+		border:none;
+		outline:none;
+	}

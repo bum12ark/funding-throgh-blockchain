@@ -1,0 +1,98 @@
+@charset "UTF-8";
+
+	/********************[상단   부분]*******************/
+	#myWallet_banner{
+		height: 150px;
+		width:110%;
+		background-color: #ebeae5;
+		display:table;
+		margin-left:-80px;
+	}
+	
+	#myWallet_banner h2{
+	 	font-size: 50px;
+		font-weight: 700;
+		line-height: 120px;
+		color:  #645353;
+	}
+	#myWallet_banner img{
+		width:55px;
+		margin-left:20px;
+		margin-bottom:10px;
+	}
+	
+	/********************[내용   부분]*******************/	
+	.edit_ac{
+		border-top: 1px solid  #EBE8E8;
+		border-bottom: 1px solid  #FFFFFF;
+		padding: 25px 0 25px 0;
+	}
+	
+	.labelbox {
+		text-align: right;
+	}
+	.labelbox label{
+		font-size: 13px;
+		font-weight: 500;
+		line-height: 28px;
+		text-decoration: none solid rgb(103, 99, 99);
+		color:  #676363;
+	}
+	.edit_txtbox{
+		font-size: 16px;
+		background-color:  #EBEAE5;
+		color:  #7D7D7D;
+		border-radius:5px;
+		border-top: 0px solid  #E7E5E5;
+		border-right: 0px solid  #E7E5E5;
+		border-bottom: 0px solid  #CFCACA;
+		border-left: 0px solid  #E7E5E5;
+		margin: 0 0 0 16px;
+		padding: 8px 5px 8px 5px;
+		min-height: 1px;
+		cursor: text;
+	}
+	
+	.row p{
+		font-size: 13px;
+		line-height: 22.75px;
+		color:  #676363;
+		margin: 10px 0 0 20px;
+		word-spacing: 0.7px;
+	}
+	
+	
+	
+	/****************[public key]****************/
+	#wallet_publickey{
+		margin-top:15px;
+		border-bottom: 1px solid  #FFFFFF;
+		padding: 25px 0 25px 0;
+	}
+	#publickey_txtbox{
+		width:400px;
+		margin-left: 0 !important;
+	}
+	
+	/****************[private key]****************/
+	#privatekey_txtbox{
+		width:400px;
+		margin-left: 0 !important;
+	}
+	
+	#certify_btn{
+		color:  white;
+		font-size:14px;
+		line-height:20px;
+		text-align: center;
+		vertical-align: middle;
+		background-color:  #E15A58;
+		height: 30px;
+		width: 80px;
+		border-radius: 5px;
+		border:none;
+		outline:none;
+	}
+	
+	
+	

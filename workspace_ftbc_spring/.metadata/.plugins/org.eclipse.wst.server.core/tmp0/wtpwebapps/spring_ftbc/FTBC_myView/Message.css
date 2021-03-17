@@ -1,0 +1,101 @@
+@charset "UTF-8";
+.row{
+		position:static;
+	}
+	
+	.FTBC_hr{
+		border:1px solid gainsobro;
+		margin-top:-5px;
+		 width:110%;
+	}
+	
+	#MessageBanner{
+		margin-left: -15px;
+		margin-top: -20px;
+		border: 2px solid gainsobro;
+		width: 105%;
+		height:180px;
+		position:static;
+		background-image: url('../FTBC_Images/msg_banner.png');
+		background-repeat:no-repeat;
+		background-size: cover;
+	}
+	#floater {
+		width:"100%";
+		float: left; 
+		height: 50%; 
+		margin-bottom: -69px;
+	}
+	#msgBanner_top{
+		clear: both; 
+		position:relative;
+		height:138px;
+		line-height:138px;
+		margin-left:-80px;
+	}
+	
+	#msg_dark{
+		margin-bottom:20px;
+		width: 45px;
+	}
+	#msg_title{
+		margin-left:20px;
+		font-size:35px;
+		font-weight: 700;
+	}
+	
+	.nav-tabs{
+		margin-left:-80px;
+		width:114%;
+		position:absolute;
+	}
+	
+	.nav-tabs a{
+		color:black;
+		font-weight:bold;
+	}
+	.banner_side{
+		height:180px;
+		border-bottom:1px solid #dddcdc;
+	}
+	.msg_btns{
+		margin-top:30px;
+		margin-left:-80px;
+	}
+	.msg_btn{
+		line-height: 30px;
+		border:none;
+		color:gray;
+		background-color:white;
+		border-radius:5px;
+		font-weight:bold;
+		font-size:14px;
+		margin:10px;
+		outline:none;
+	}
+	input.msg_btn:hover{
+		color:gray;
+		background-color:gainsboro;
+	}
+	.msg_content{
+		position:relative;
+		width:80%;
+		text-align:center;
+		color:gainsboro;
+		padding-top:6em;
+		padding-bottom:6em;
+	}
+	.msg_content h3{
+		font-weight:bold;
+	}
+	#msg_lt{
+		width:65px;
+	}
+	
+	/* 2019-10-17 고명석 수정 */
+	#message_view .table{
+		color : black;
+		margin-left: -100px;	
+	}
+	
+	

@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/***************** 프로젝트 작성 바디 태그 속성 *******************/
+	body{
+		background-color:#f7f7f7;
+	}
+	/***************** 프로젝트 작성  상단부 (제목,안내 이미지 포함) 속성 *******************/
+	#top{
+		background-color:white;
+	}
+	/***************** 프로젝트 작성  하단부 (탭, 프로젝트 작성하는 부분) 속성 *******************/
+	#bottom{
+		height:100%;
+		border-top: 1px solid #e5e5e5;
+	}
+	.nav-tabs{
+		border-bottom: 1px solid #e5e5e5!important;
+	}
+	/***************** 프로젝트 작성  상단부 제목의 div 속성 *******************/
+	#top_title{
+	 	text-align:center;
+	 	vertical-align:middle;
+		height:100px;
+		padding-top: 30px;
+	}
+	/***************** 프로젝트 작성  상단부 제목의 글자 속성 *******************/
+	#title{
+		font-size:30px;
+	}
+	/***************** 프로젝트 작성  안내 이미지 속성 *******************/
+	#top_rule, #top_notice{
+		text-align:center;
+	}
+	/***************** 프로젝트 작성  안내 이미지(운영원칙) 속성 *******************/
+	#img_rule{
+		content: url("../FTBC_Images/real_rule.png"); 
+	}
+	/***************** 프로젝트 작성  안내 이미지(안내) 속성 *******************/
+	#img_notice{
+		content: url("../FTBC_Images/real_notice.png"); 
+	}
+	
+	/***************** 탭 클래스  안 a태그 속성*******************/
+	.nav-tabs a{
+		color:black;
+	}
+	
+	/***************** 선택된 탭 클래스  안 a태그 속성*******************/
+	
+	/***************** 탭 내부 안에 p태그 속성*******************/
+	.tab-pane p{
+		margin-top:30px;
+		color:#848484;
+	}
+	
+	/***************** 메뉴들(Project_Summary, Project_StoryTelling등)  속성*******************/
+	#menu1, #menu2, #menu3, #menu4{
+		/* margin-left:30px; */
+	}
+	/***************** 미리보기, 검토요청하기 속성*******************/
+	.btns{
+		border-color:gainsboro;
+		border-style:solid;
+		border-width:1px;
+	}
+	/***************** btns 클래스, 내부 div 속성*******************/
+	.btns, .btns div{
+		line-height:30px;
+		font-size: 15px;
+		float:left;
+		width: 250px;
+		text-align: center;
+	}
+	
+	/***************** 미리보기 버튼 속성*******************/
+	#d_preview{
+		border: none;
+		width:50%;
+	}
+	#btn_preview{
+		color:gainsboro;
+	}
+	
+	/***************** 검토 요청 버튼 속성*******************/
+	#d_request{
+		border: none;
+		background-color:gainsboro;
+		width:100%;
+	}
+	
+	#btn_request{
+		color:white;
+	}
+
+	#modal_check .row { 
+		margin:auto;
+	}
+	#modal_img img{
+		width: 100px;
+	}
+	
+	
+	
+	
